@@ -1,4 +1,3 @@
-
 <!doctype html>
 
 <html lang="en">
@@ -89,7 +88,7 @@ var ios_af_dp = encodeURIComponent(ios_dp);
 
 
 // Логика получения и передачи меток
-var utm_source_sm='', utm_medium_sm='', utm_campaign_sm='', utm_content_sm='', utm_term_sm='', ga_uid_sm='', other_param = '', other_param_web = '';
+var utm_source_sm='', utm_medium_sm='', utm_campaign_sm='', utm_content_sm='', utm_term_sm='', ga_uid_sm='', other_param = '';
 
 var getCookie = function(name) {
     var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
@@ -186,16 +185,23 @@ var redirect_iphone = 'https://sberbankonline.onelink.me/46WQ'+'?'+'af_force_dee
 var redirect_unknown=other_link+other_param_web;	
 // БЕЗ парамтров
 //var redirect_unknown=other_link+web_utm_source+web_utm_medium+web_utm_campaign+web_utm_content+web_utm_term;	
-	
 
-document.getElementById("pdx1").innerHTML = redirect_iphone;
-document.getElementById("redirect_iphone").innerHTML = redirect_iphone;
-<h1 id="time">Итог - <div id="redirect_iphone"></div> </h1>  
 
 
 
 </script>
-	
+
+<script>
+    function goToFinalURL()
+    {
+       var finalurl = redirect_iphone;
+       window.location.href = finalurl;
+    }
+    </script>
+    
+    <p><a href="javascript:goToFinalURL()">redirect_iphone</a></p>
+    
+
 	<style>
 
 	 body {font-size: 20px; font-family: Arial;}
@@ -209,6 +215,3 @@ document.getElementById("redirect_iphone").innerHTML = redirect_iphone;
 </body>
 
 </html>
-
-
-
