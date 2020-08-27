@@ -108,12 +108,12 @@ if (document.location.href.search(/=/)>0){
   if (utm_arr != '' && utm_arr[i].search('utm_term')>=0) {var utm_term_sm = '-_-'+utm_arr[i].split('=').pop(); utm_arr[i] = ''};
 
 	}
-    var other_param = encodeURIComponent(utm_arr.map(v => v ).join('&'));
+    var other_param = encodeURIComponent(utm_arr.filter(v => v ).join('&'));
 
     function replaceAll(string, search, replace) {
             return string.split(search).join(replace);
         }
-    var other_param_web = '?' + replaceAll(decodeURIComponent(utm_arr.map(v => v ).join('&')).replace(/[\+\s]/ig, '__'), '&', '%26');
+    var other_param_web = '?' + replaceAll(decodeURIComponent(utm_arr.filter(v => v ).join('&')).replace(/[\+\s]/ig, '__'), '&', '%26');
     
 
 } else {
