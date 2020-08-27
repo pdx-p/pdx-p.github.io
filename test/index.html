@@ -188,88 +188,14 @@ var redirect_unknown=other_link+other_param_web;
 //var redirect_unknown=other_link+web_utm_source+web_utm_medium+web_utm_campaign+web_utm_content+web_utm_term;	
 
 
-	// проверка платформы
-
-	function check_platform(ua) {
 
 
-
-        if(/android/gi.test(ua)){
-
-			return 'android';
-
-        }
-
-
-
-        if(/iphone|ipod/gi.test(ua)){
-
-            return 'iPhone';
-
-        }
-
-
-
-		return  'unknown';
-
-
-
-	}
-
-
-
-	// переадресация
-
-
-
-
-	// сообщение пользователю
-
-	function inform_user (msg) {
-
-		document.write(msg);
-
-		return true;
-
-	}
-
-
-
-	// начало
-
-	var platform=check_platform(navigator.userAgent);
-
-
-
-
-	if (platform=="android") {
-
-		inform_user(redirect_android);
-
-
-	}
-
-
-
-	else if (platform=="iPhone") {
-
-		inform_user(redirect_iphone);
-
-	}
-
-
-
-	else {
-		inform_user(<a href="redirect_iphone"> </a>);
-
-	}
-
-
+<a href=redirect_iphone>LOLOLO</a>
 
 </script>
 
 
-<a href=redirect_iphone>"KOKOKO"</a>
+
 	<style>
 
 	 body {font-size: 20px; font-family: Arial;}
