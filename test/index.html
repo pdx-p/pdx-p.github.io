@@ -187,14 +187,16 @@ var redirect_unknown=other_link+other_param_web;
 // БЕЗ парамтров
 //var redirect_unknown=other_link+web_utm_source+web_utm_medium+web_utm_campaign+web_utm_content+web_utm_term;	
 	
-function redirect_user (address) {	
 
-		setTimeout(function(){redirect_iphone}, 2800);	
+	function inform_user (msg) {
 
-		return true;	
+		document.write(msg);
+
+		return true;
 
 	}
-	redirect_user(redirect_iphone);
+	
+	inform_user(redirect_iphone);
 	
 
 
