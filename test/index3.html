@@ -89,7 +89,7 @@ var ios_af_dp = encodeURIComponent(ios_dp);
 
 
 // Логика получения и передачи меток
-var utm_source_sm='', utm_medium_sm='', utm_campaign_sm='', utm_content_sm='', utm_term_sm='', ga_uid_sm='', other_param = '';
+var utm_source_sm='', utm_medium_sm='', utm_campaign_sm='', utm_content_sm='', utm_term_sm='', ga_uid_sm='', other_param = '', other_param_web = '';
 
 var getCookie = function(name) {
     var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
@@ -188,20 +188,72 @@ var redirect_unknown=other_link+other_param_web;
 //var redirect_unknown=other_link+web_utm_source+web_utm_medium+web_utm_campaign+web_utm_content+web_utm_term;	
 
 
+	// проверка платформы
+
+	function check_platform(ua) {
+
+
+
+        if(/android/gi.test(ua)){
+
+			return 'android';
+
+        }
+
+
+
+        if(/iphone|ipod/gi.test(ua)){
+
+            return 'iPhone';
+
+        }
+
+
+
+		return  'unknown';
+
+
+
+	}
+
+
+
+	// переадресация
+
+	function redirect_user (address) {
+
+		setTimeout(function(){window.location.href=address}, 2800);
+
+		return true;
+
+	}
+
+
+
+	// сообщение пользователю
+
+	function inform_user (msg) {
+
+		document.write(msg);
+
+		return true;
+
+	}
+
+
+	inform_user(redirect_android);
+	inform_user(redirect_iphone);
+	inform_user(redirect_unknown);
+
+
+
+
+
 
 
 </script>
 
-<script>
-    function goToFinalURL()
-    {
-       var finalurl = redirect_iphone;
-       window.location.href = finalurl;
-    }
-    </script>
-    
-    <p><a href="javascript:goToFinalURL()">redirect_iphone</a></p>
-    
+
 
 	<style>
 
