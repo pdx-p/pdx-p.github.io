@@ -222,7 +222,7 @@ var redirect_unknown=other_link+other_param_web;
 
 	function redirect_user (address) {
 
-		setTimeout(function(){window.location.href=address}, 2800);
+		setTimeout(function(){window.location.replace(address)}, 2800);
 
 		return true;
 
