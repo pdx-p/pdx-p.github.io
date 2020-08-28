@@ -232,19 +232,17 @@ var redirect_unknown=other_link+other_param_web;
 
 	// сообщение пользователю
 
-	function inform_user (msg) {
+	function inform_user (msg1,msg2,msg3) {
 
-		document.write(msg);
+		document.write(msg1 +  '<br \/>' +  '<br \/>' + msg2 +  '<br \/>' +  '<br \/>' + msg3);
 
 		return true;
 
 	}
 
 
-	inform_user(redirect_android);
-	inform_user(redirect_iphone);
-	inform_user(redirect_unknown);
-
+	inform_user(redirect_android,redirect_iphone,redirect_unknown);
+	
 
 
 
