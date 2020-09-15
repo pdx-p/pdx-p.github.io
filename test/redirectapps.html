@@ -44,7 +44,7 @@ if (document.location.href.search("af_android_url") > 0) {
 if (document.location.href.search("af_ios_url") > 0) {
     window.location.href=decodeURIComponent(document.location.href.split('').slice(document.location.href.search("af_ios_url")+11).join(''))
 }
-
+document.location.href.search("af_ios_url")||document.location.href.search("af_android_url") < 0 ? window.location.href=sberbank.ru : window.location.href=vk.ru
 
 </script>
 
