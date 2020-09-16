@@ -38,34 +38,21 @@
 
 <script>
 
-var b = decodeURIComponent(document.location.href)
+var a = decodeURIComponent(document.location.href)
 
-c = b.slice(b.lastIndexOf('web_link=')+9)
-d = (b.lastIndexOf('af_android_url'||'af_ios_url')>0)
-	
-if(b.lastIndexOf('af_android_url')>0) {
-d = b.slice(b.lastIndexOf('&?')+2, b.lastIndexOf('web_link=')-1)
+b = decodeURIComponent(a.slice(a.lastIndexOf('web_link'))) 
+c = decodeURIComponent(a.slice(a.lastIndexOf('af_android')))
+
+if (b.search('https://online.sberbank.ru/CSAFront/index.do?#/payOrderPaymentLogin?ST=ufs.sberpay.ipos') >= 0) {
+	e = 'https://online.sberbank.ru/CSAFront/index.do?#/payOrderPaymentLogin?ST=ufs.sberpay.ipos&' + c
+} else if (b.search('https://online.sberbank.ru/CSAFront/index.do?#/payOrderPaymentLogin') >= 0) {
+	e = 'https://online.sberbank.ru/CSAFront/index.do?#/payOrderPaymentLogin?' + c
+} else if (b.search('https://online.sberbank.ru/CSAFront/index.do') >= 0) {
+	e = 'https://online.sberbank.ru/CSAFront/index.do?' + c
 }
 	
-if(b.lastIndexOf('af_ios_url')>0) {
-d = b.slice(b.lastIndexOf('&?')+2, b.lastIndexOf('web_link=')-1)
-}
-	
-	
-
-		function inform_user (msg1) {
-
-		document.write('Android: <br \/><a href="'+msg1+'">'+msg1+'</a> <br \/>' + msg1 +  '<br \/><br \/>);
-
-
-		return true;
-
-	}
-			      document.write(document.location.href)
-
-
-	inform_user(b);
-
+document.location.replace(e)
+    
 </script>
 
 
