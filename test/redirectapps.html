@@ -42,13 +42,14 @@ var a = decodeURIComponent(document.location.href)
 
 b = decodeURIComponent(a.slice(a.lastIndexOf('web_link'))) 
 c = decodeURIComponent(a.slice(a.lastIndexOf('af_android')))
+r = c.slice(c.indexOf('html')+5, c.indexOf('web_link')-1)
 
 if (b.search('https://online.sberbank.ru/CSAFront/index.do?#/payOrderPaymentLogin?ST=ufs.sberpay.ipos') >= 0) {
-	e = 'https://online.sberbank.ru/CSAFront/index.do?#/payOrderPaymentLogin?ST=ufs.sberpay.ipos&' + c
+	e = 'https://online.sberbank.ru/CSAFront/index.do?#/payOrderPaymentLogin?ST=ufs.sberpay.ipos&' + r
 } else if (b.search('https://online.sberbank.ru/CSAFront/index.do?#/payOrderPaymentLogin') >= 0) {
-	e = 'https://online.sberbank.ru/CSAFront/index.do?#/payOrderPaymentLogin?' + c
+	e = 'https://online.sberbank.ru/CSAFront/index.do?#/payOrderPaymentLogin?' + r
 } else if (b.search('https://online.sberbank.ru/CSAFront/index.do') >= 0) {
-	e = 'https://online.sberbank.ru/CSAFront/index.do?' + c
+	e = 'https://online.sberbank.ru/CSAFront/index.do?' + r
 }
 	
 document.location.replace(e)
