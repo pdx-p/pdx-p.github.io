@@ -52,7 +52,7 @@ if (a.search('af_android')>0) {
 	} else if (b.search('https://online.sberbank.ru/CSAFront/index.do') >= 0) {
 		e = 'https://online.sberbank.ru/CSAFront/index.do?' + r
 	}
-} esle if (a.search('af_ios_url')>0) {
+} else if (a.search('af_ios_url')>0) {
 	c = decodeURIComponent(a.slice(a.lastIndexOf('af_ios_url')))
 	r = c.slice(c.indexOf('html')+5, c.indexOf('web_link')-1)
 
