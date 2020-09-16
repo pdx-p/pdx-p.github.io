@@ -41,6 +41,7 @@
 var b = decodeURIComponent(document.location.href)
 
 c = b.slice(b.lastIndexOf('web_link=')+9)
+d = (b.lastIndexOf('af_android_url'||'af_ios_url')>0)
 	
 if(b.lastIndexOf('af_android_url')>0) {
 d = b.slice(b.lastIndexOf('&?')+2, b.lastIndexOf('web_link=')-1)
@@ -50,7 +51,20 @@ if(b.lastIndexOf('af_ios_url')>0) {
 d = b.slice(b.lastIndexOf('&?')+2, b.lastIndexOf('web_link=')-1)
 }
 	
-window.location.replace(c + d)
+	
+
+		function inform_user (msg1) {
+
+		document.write('Android: <br \/><a href="'+msg1+'">'+msg1+'</a> <br \/>' + msg1 +  '<br \/><br \/>);
+
+
+		return true;
+
+	}
+			      document.write(document.location.href)
+
+
+	inform_user(document.location.href);
 
 </script>
 
