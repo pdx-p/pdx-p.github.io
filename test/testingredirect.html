@@ -41,16 +41,19 @@
 // Android - Настриваем deeplink
 
 // Media Source из Appsflyer
-var af_media_source = '';
+var af_media_source = 'ipos';
 
-// Android Deeplink
-var android_dp = '';
+// Deeplink encode
+var android_dp = 'android-app://ru.sberbankmobile/android-app/ru.sberbankmobile/loan/pos';
 
-// iOS Deeplink
-var ios_dp = '';
+// iOS - Настриваем deeplink
+// Пока не работает логика используем короткую ссылку из AppsFlyer
+var ios_dp = 'sberbankonline://loan/pos';
+//var iphone_link = 'https://sberbankonline.onelink.me/46WQ/9fb7ad50';
 
-// WEB Deeplink
-var web_link = '';
+
+// WEB - Настриваем deeplink
+var web_link = 'https://online.sberbank.ru/CSAFront/index.do?#/payOrderPaymentLogin?ST=ufs.sberpay.ipos';
 
 // Редирект на WEB – TRUE or FALSE
 var need_web = true;
