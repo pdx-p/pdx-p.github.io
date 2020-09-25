@@ -44,7 +44,7 @@ b = decodeURIComponent(a.slice(a.indexOf('web_link')))
 e = [b.indexOf('af_web_id'),b.indexOf('f_sub5'),b.indexOf('af_pid'),b.indexOf('pid'),b.indexOf('af_c'),b.indexOf('is_retargeting'),b.indexOf('af_utm_source'),b.indexOf('af_utm_medium'),b.indexOf('af_utm_campaign'),b.indexOf('af_utm_content_plus'),b.indexOf('af_ga_uid_sm'),b.indexOf('android_af_dp'),b.indexOf('is_q_and'),b.indexOf('other_param'),b.indexOf('external_source'),b.indexOf('af_android_url'),b.indexOf('c='),b.indexOf('af_force_deeplink'),b.indexOf('af_dp'),b.indexOf('ios_af_dp'),b.indexOf('is_q_ios'),b.indexOf('other_param'),b.indexOf('external_source'),b.indexOf('af_ios_url')].filter(v => v !== -1).sort((a,b) => a-b)[0]
 g = b.slice(9,e).search('#') > 0 ? b.slice(9,e).toString().slice(0,-1) + '&' : b.slice(9,e).toString().slice(0,-1) + '?'
 c = decodeURIComponent(a.slice(a.indexOf('?')+1,a.indexOf('web_link')-1))
-setTimeout(window.location.href=g+c, 100)
+setTimeout(window.location.href=g+c, 300)
     
 </script>
 
