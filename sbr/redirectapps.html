@@ -38,10 +38,11 @@
 
 <script>
 
-var a = decodeURIComponent(document.location.href)
+var a = document.location.href
 var b = a.slice(a.lastIndexOf('https'))
+var c = [b.indexOf('?'),b.indexOf('&'),b.indexOf('#')].sort((a,b) => a-b).filter(v => v != -1)[0]
 var e = [b.indexOf('af_web_id'),b.indexOf('f_sub5'),b.indexOf('af_pid'),b.indexOf('pid'),b.indexOf('af_c'),b.indexOf('is_retargeting'),b.indexOf('af_utm_source'),b.indexOf('af_utm_medium'),b.indexOf('af_utm_campaign'),b.indexOf('af_utm_content_plus'),b.indexOf('af_ga_uid_sm'),b.indexOf('android_af_dp'),b.indexOf('is_q_and'),b.indexOf('other_param'),b.indexOf('external_source'),b.indexOf('af_android_url'),b.indexOf('c='),b.indexOf('af_force_deeplink'),b.indexOf('af_dp'),b.indexOf('ios_af_dp'),b.indexOf('is_q_ios'),b.indexOf('other_param'),b.indexOf('external_source'),b.indexOf('af_ios_url')].filter(v => v !== -1).sort((a,b) => a-b)[0]
-var result = e > 0 ? b.slice(0,e-1) : b
+var result = e > 0 ? decodeURIComponent(b.slice(0,e-1)) : decodeURIComponent(b.slice(0,c))
 setTimeout(window.location.href=result, 100)
     
 </script>
