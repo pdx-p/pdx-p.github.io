@@ -208,18 +208,16 @@ var web_utm_content = utm_content_sm ? 'utm_content='+utm_content_sm : '';
 var web_utm_term = utm_content_sm ? 'utm_term='+utm_term_sm : '';
 
 
-
-var web_param = ''
-
+var web_param = [other_param_web,web_utm_source,web_utm_medium,web_utm_campaign,web_utm_content,web_utm_term].filter(v => v).map(v => '&' + v).join('').slice(1) == '' ? web_param = '' : web_param = separator + [other_param_web,web_utm_source,web_utm_medium,web_utm_campaign,web_utm_content,web_utm_term].filter(v => v).map(v => '&' + v).join('').slice(1);
 if (web_link.search('sberbank.ru') >= 0){
-other_param_web == '' ? web_param = '' : web_param = separator + other_param_web;
+other_param_web !== ''? web_param = separator + other_param_web : web_param = other_param_web;
 } else {
-[other_param_web,web_utm_source,web_utm_medium,web_utm_campaign,web_utm_content,web_utm_term].filter(v => v).map(v => '&' + v).join('').slice(1) == '' ? web_param = '' : web_param = separator + [other_param_web,web_utm_source,web_utm_medium,web_utm_campaign,web_utm_content,web_utm_term].filter(v => v).map(v => '&' + v).join('').slice(1);
+web_param
 }
 
 
 
-need_web == true ? af_web_url = web_link + web_param: need_web;
+need_web == true ? af_web_url = web_link + web_param: af_web_url = '';
 
 if (af_web_url !=''){
 var af_android_url = '&af_android_url=' + gasket + '?gasket=' + encodeURIComponent(af_web_url);
@@ -228,6 +226,7 @@ var af_ios_url = '&af_ios_url=' + gasket + '?gasket=' + encodeURIComponent(af_we
 var af_android_url = '';
 var af_ios_url = '';
 }
+	
 	
 // Android
 var redirect_android = 'https://app.appsflyer.com/ru.sberbankmobile'+'?'+af_pid+af_c+'&is_retargeting=true'+'&af_dp='+android_af_dp+is_q_and+other_param+external_source+af_utm_source+af_utm_medium+af_utm_campaign+af_utm_content_plus+af_ga_uid_sm+af_android_url;
