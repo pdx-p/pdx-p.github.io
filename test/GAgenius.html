@@ -222,8 +222,8 @@ other_param_web == '' ? web_param = '' : web_param = separator + other_param_web
 need_web == true ? af_web_url = web_link + web_param: need_web;
 
 if (af_web_url !=''){
-var af_android_url = '&af_android_url=' + gasket + encodeURIComponent(af_web_url);
-var af_ios_url = '&af_ios_url=' + gasket + encodeURIComponent(af_web_url);
+var af_android_url = '&af_android_url=' + gasket + '?' + encodeURIComponent(af_web_url);
+var af_ios_url = '&af_ios_url=' + gasket + '?' + encodeURIComponent(af_web_url);
 } else {
 var af_android_url = '';
 var af_ios_url = '';
