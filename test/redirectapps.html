@@ -38,7 +38,8 @@
 
 <script>
 
-var a = decodeURIComponent(document.location.href).slice(a.lastIndexOf('https'))
+var a = decodeURIComponent(document.location.href)
+var b = a.slice(a.lastIndexOf('https'))
 setTimeout(window.location.href=a, 100)
     
 </script>
