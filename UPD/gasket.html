@@ -60,11 +60,11 @@ var separator = '?'
 
 if (g.indexOf('srvUrl') > 0){
 g = g.slice(0,g.indexOf('srvUrl'))+g.slice(g.indexOf('srvUrl')).replace(/\//gi, '%2F').replace(/#/gi, '%23').replace(/&/gi, '%26')+ separator + c.replace(/\//gi, '%2F').replace(/#/gi, '%23').replace(/&/gi, '%26')
-	document.write(g)
+
 	//setTimeout(window.location.replace(g),100)
 }
 	//setTimeout(window.location.replace(g+c),300)
-    
+   setTimeout(document.write(g),100)
 </script>
 
 
