@@ -69,9 +69,15 @@ var separator = '?'
 if (g.indexOf('srvUrl') > 0){
 g = g.slice(0,g.indexOf('srvUrl'))+g.slice(g.indexOf('srvUrl')).replace(/\//gi, '%2F').replace(/#/gi, '%23').replace(/&/gi, '%26')+ separator + c.replace(/\//gi, '%2F').replace(/#/gi, '%23').replace(/&/gi, '%26')
 setTimeout(window.location.replace(g),500)
-} else {
+} else if (g.indexOf('ST') > 0){
 g = g.slice(0,g.indexOf('ST'))+g.slice(g.indexOf('ST')) + separator + c
 setTimeout(window.location.replace(g),500)
+} else {
+if (c.length > 0) {
+setTimeout(window.location.replace(g+separator + c),500)
+} else {
+setTimeout(window.location.replace(g),500)
+}
 }
 	
 		       
