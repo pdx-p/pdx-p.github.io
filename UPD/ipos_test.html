@@ -79,48 +79,6 @@ var af_web_url = '';
 
 need_web == true ? af_web_url = 'https://pdx-p.github.io/UPD/gasket.html' : need_web;
 
-// %26 = &; %3F = ?; %23 = #
-// TESTING////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-var random_names = Math.max(...[web_link.indexOf('ST'),web_link.indexOf('srvURL'),web_link.indexOf('srvUrl')])             // поиск уникального имени ссылки
-var random_names_grid = [web_link.lastIndexOf('#'),web_link.lastIndexOf('%23')].sort((a,b) => b-a)[0]        // index #
-var random_names_query = [web_link.lastIndexOf('?'),web_link.lastIndexOf('%3F')].sort((a,b) => b-a)[0]       // index ?
-var random_names_amper = [web_link.lastIndexOf('&'),web_link.lastIndexOf('%26')].sort((a,b) => b-a)[0]       // index ?
-if (random_names >= 0) {
-if (random_names_grid > 0 && random_names_query > random_names_grid) {  // # > 0 and ? > #
-var separator = '&'
-}
-if (random_names_grid > 0 && random_names_query < random_names_grid) {  // # > 0 and ? < #
-var separator = '?'
-}
-if (random_names_grid < 0 && random_names_query > random_names_amper) { // # < 0 and ? > &
-var separator = '&'
-}
-if (random_names_grid < 0 && random_names_query < random_names_amper) { // # < 0 and ? < &
-var separator = '&'
-}
-if (random_names_grid < 0 && random_names_query < 0) { // # < 0 and ? < &
-var separator = '?'
-}
-}
-if (random_names == -1) {
-if (random_names_grid > 0 && random_names_query > random_names_grid) {  // # > 0 and ? > #
-var separator = '&'
-}
-if (random_names_grid > 0 && random_names_query < random_names_grid) {  // # > 0 and ? < #
-var separator = '?'
-}
-if (random_names_grid < 0 && random_names_query > random_names_amper) { // # < 0 and ? > &
-var separator = '&'
-}
-if (random_names_grid < 0 && random_names_query < random_names_amper) { // # < 0 and ? < &
-var separator = '&'
-}
-if (random_names_grid < 0 && random_names_query < 0) { // # < 0 and ? < &
-var separator = '?'
-}
-} 
-// TESTING////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 // Логика получения и передачи меток и параметров
 var utm_source_sm='', utm_medium_sm='', utm_campaign_sm='', utm_content_sm='', utm_term_sm='', ga_uid_sm='', other_param = '', other_param_web = '', other_param_web_url='';
 
