@@ -24,12 +24,13 @@ g = b.slice(9,e).search('#') > 0 ? b.slice(9,e).toString().slice(0,-1) : b.slice
 c = decodeURIComponent(a.slice(a.indexOf('?')+1,a.indexOf('web_link')-1))
 // %26 = &; %3F = ?; %23 = #
 // TESTING////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 var random_names = Math.max(...[g.indexOf('ST'),g.indexOf('srvURL'),g.indexOf('srvUrl')])             // поиск уникального имени ссылки
 var random_names_helper = g.slice(random_names)       // конец уникальной ссылки
-if (random_names >= 0) {
 var random_names_grid = [g.lastIndexOf('#'),g.lastIndexOf('%23')].sort((a,b) => b-a)[0]        // index #
 var random_names_query = [g.lastIndexOf('?'),g.lastIndexOf('%3F')].sort((a,b) => b-a)[0]       // index ?
 var random_names_amper = [g.lastIndexOf('&'),g.lastIndexOf('%26')].sort((a,b) => b-a)[0]       // index ?
+if (random_names >= 0) {
 if (random_names_grid > 0 && random_names_query > random_names_grid) {  // # > 0 and ? > #
 var separator = '&'
 }
@@ -47,24 +48,32 @@ var separator = '?'
 }
 }
 if (random_names == -1) {
-var random_names_helper3 = [[g.indexOf('?'),g.indexOf('%3F')].sort((a,b) => b-a)[0],[g.indexOf('&'),web_link.indexOf('%26')].sort((a,b) => b-a)[0]]
-if (random_names_helper3[0] > random_names_helper3[1]) {
+if (random_names_grid > 0 && random_names_query > random_names_grid) {  // # > 0 and ? > #
 var separator = '&'
-} else if (random_names_helper3[0] < random_names_helper3[1]){
-var separator = '&'
-} else if (random_names_helper3[0] == random_names_helper3[1]){
+}
+if (random_names_grid > 0 && random_names_query < random_names_grid) {  // # > 0 and ? < #
 var separator = '?'
-} 
+}
+if (random_names_grid < 0 && random_names_query > random_names_amper) { // # < 0 and ? > &
+var separator = '&'
+}
+if (random_names_grid < 0 && random_names_query < random_names_amper) { // # < 0 and ? < &
+var separator = '&'
+}
+if (random_names_grid < 0 && random_names_query < 0) { // # < 0 and ? < &
+var separator = '?'
+}
 }
 // TESTING////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 if (g.indexOf('srvUrl') > 0){
 g = g.slice(0,g.indexOf('srvUrl'))+g.slice(g.indexOf('srvUrl')).replace(/\//gi, '%2F').replace(/#/gi, '%23').replace(/&/gi, '%26')+ separator + c.replace(/\//gi, '%2F').replace(/#/gi, '%23').replace(/&/gi, '%26')
-
-	//setTimeout(window.location.replace(g),100)
+setTimeout(window.location.replace(g),500)
+} else {
+g = g.slice(0,g.indexOf('ST'))+g.slice(g.indexOf('ST')) + separator + c
+setTimeout(window.location.replace(g),500)
 }
 	
-SetTimeout(window.location.replace(g),300)
 		       
 
 </script>
