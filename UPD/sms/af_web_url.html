@@ -19,7 +19,7 @@
 var link = decodeURIComponent(document.location.href)
 
 url = decodeURIComponent(link.slice(link.indexOf('web_link')))   // Начало ссылки для редиректа
-utm = decodeURIComponent(link.slice(link.indexOf('sms/af_web_url') + 15, link.indexOf('web_link') - 1))  // Utm метки для новой ссылки
+utm = decodeURIComponent(link.slice(link.indexOf('sms/af_web_url') + 20, link.indexOf('web_link') - 1))  // Utm метки для новой ссылки
 url_end = url.slice(url,[url.indexOf('af_web_id'),url.indexOf('f_sub5'),url.indexOf('af_pid'),url.indexOf('pid'),url.indexOf('af_c'),url.indexOf('is_retargeting'),url.indexOf('af_utm_source'),url.indexOf('af_utm_medium'),url.indexOf('af_utm_campaign'),url.indexOf('af_utm_content_plus'),url.indexOf('af_ga_uid_sm'),url.indexOf('android_af_dp'),url.indexOf('is_q_and'),url.indexOf('other_param'),url.indexOf('external_source'),url.indexOf('af_android_url'),url.indexOf('ut='),url.indexOf('af_force_deeplink'),url.indexOf('af_dp'),url.indexOf('ios_af_dp'),url.indexOf('is_q_ios'),url.indexOf('other_param'),url.indexOf('external_source'),url.indexOf('af_ios_url')].filter(v => v !== -1).sort((a,b) => a-b)[0])  // Удаление лишних utm меток
 result = url_end.slice(-1) == '?' ||  url_end.slice(-1) == '#' || url_end.slice(-1) == '&' ? result = url_end.slice(9,-1) : result = url_end.slice(9) // Готовая ссылка без UTM меток
 
