@@ -149,8 +149,8 @@ var utm_source_sm_fc = getCookie('utm_source'), utm_medium_sm_fc = getCookie('ut
 	if (af_web_url !=''){
 		var af_android_url = ''; 
 		var af_ios_url = '';
-		other_param_web_url == '' ? af_android_url = '&af_android_url=' + encodeURIComponent(af_web_url+other_param_web_url + '&web_link='+web_link) : af_android_url = '&af_android_url=' + encodeURIComponent(af_web_url + '?web_link=' + web_link);
-		other_param_web_url == '' ? af_ios_url = '&af_ios_url=' + encodeURIComponent(af_web_url+other_param_web_url + '&web_link='+web_link) : af_ios_url = '&af_ios_url=' + encodeURIComponent(af_web_url + '?web_link=' + web_link);
+		other_param_web_url == '' ? af_android_url = '&af_android_url=' + encodeURIComponent(af_web_url + '?web_link=' + web_link) : af_android_url = '&af_android_url=' + encodeURIComponent(af_web_url+other_param_web_url + '&web_link='+web_link) ;
+		other_param_web_url == '' ? af_ios_url = '&af_ios_url=' + encodeURIComponent(af_web_url + '?web_link=' + web_link) :  af_ios_url = '&af_ios_url=' + encodeURIComponent(af_web_url+other_param_web_url + '&web_link='+web_link);
 	} else {
 	var af_android_url = '';
 	var af_ios_url = '';
