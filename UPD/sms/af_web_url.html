@@ -1,0 +1,76 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+
+	<meta charset="UTF-8">
+
+	<link rel="icon" href="/sms/img/favicon2.ico" type="image/x-icon">
+
+	<title>Сбербанк Онлайн</title>
+
+</head>
+
+<body>
+
+<script>
+
+var link = decodeURIComponent(document.location.href)
+
+url = decodeURIComponent(link.slice(link.indexOf('web_link')))   // Начало ссылки для редиректа
+utm = decodeURIComponent(link.slice(link.indexOf('sms/af_web_url') + 15, link.indexOf('web_link') - 1))  // Utm метки для новой ссылки
+url_end = url.slice(url,[url.indexOf('af_web_id'),url.indexOf('f_sub5'),url.indexOf('af_pid'),url.indexOf('pid'),url.indexOf('af_c'),url.indexOf('is_retargeting'),url.indexOf('af_utm_source'),url.indexOf('af_utm_medium'),url.indexOf('af_utm_campaign'),url.indexOf('af_utm_content_plus'),url.indexOf('af_ga_uid_sm'),url.indexOf('android_af_dp'),url.indexOf('is_q_and'),url.indexOf('other_param'),url.indexOf('external_source'),url.indexOf('af_android_url'),url.indexOf('ut='),url.indexOf('af_force_deeplink'),url.indexOf('af_dp'),url.indexOf('ios_af_dp'),url.indexOf('is_q_ios'),url.indexOf('other_param'),url.indexOf('external_source'),url.indexOf('af_ios_url')].filter(v => v !== -1).sort((a,b) => a-b)[0])  // Удаление лишних utm меток
+result = url_end.slice(-1) == '?' ||  url_end.slice(-1) == '#' || url_end.slice(-1) == '&' ? result = url_end.slice(9,-1) : result = url_end.slice(9) // Готовая ссылка без UTM меток
+
+if (link.indexOf('web_link') == -1) {                    // redirect sber
+    var sber = 'https://www.sberbank.ru/'
+    window.location.replace(sber)
+} else if (utm == '') {
+    window.location.replace(result)
+} else {
+
+    var random_names_grid = [result.lastIndexOf('#'), result.lastIndexOf('%23')].sort((a, b) => b - a)[0]        // index #
+    var random_names_query = [result.lastIndexOf('?'), result.lastIndexOf('%3F')].sort((a, b) => b - a)[0]       // index ?
+    var random_names_amper = [result.lastIndexOf('&'), result.lastIndexOf('%26')].sort((a, b) => b - a)[0]       // index ?
+
+        if (random_names_grid > 0 && random_names_query > random_names_grid) {  // # > 0 and ? > #
+            var separator = '&'
+        }
+        if (random_names_grid > 0 && random_names_query < random_names_grid) {  // # > 0 and ? < #
+            var separator = '?'
+        }
+        if (random_names_grid < 0 && random_names_query > random_names_amper) { // # < 0 and ? > &
+            var separator = '&'
+        }
+        if (random_names_grid < 0 && random_names_query < random_names_amper) { // # < 0 and ? < &
+            var separator = '&'
+        }
+        if (random_names_grid < 0 && random_names_query < 0) { // # < 0 and ? < &
+            var separator = '?'
+        }
+        
+result = result + separator + utm
+
+setTimeout(window.location.replace(result),500)
+
+}
+    
+</script>
+
+
+
+	<style>
+
+	 body {font-size: 20px; font-family: Arial;}
+
+	</style>
+
+	
+
+
+
+
+</body>
+
+</html>
