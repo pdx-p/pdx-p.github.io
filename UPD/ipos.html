@@ -227,8 +227,8 @@ var redirect_unknown=web_link+other_param_web;
 	// переадресация
 
 	function redirect_user (address) {
-
-		window.location.href=address;
+		window.location.replace(address)
+		//window.location.href=address;
 
 		return true;
 
