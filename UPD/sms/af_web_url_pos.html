@@ -23,12 +23,12 @@ var a = 'https://online.sberbank.ru/CSAFront/index.do?#payOrderPaymentLogin?ST=u
 var b = document.location.href.toLowerCase().split('?reqid=').pop().split('?').shift().split('&').shift();
 var c = 'https://online.sberbank.ru/CSAFront/index.do'	
 
- 	window.location.href=a+b;
-	window.location.href=a+b;
-	window.location.href=a+b;
-	window.location.href=a+b;
-	window.location.href=a+b;
+window.open(a+b)
 
+function redirect_user(address) {
+setTimeout(function(){window.location.href=a+b}, 2000)
+}
+redirect_user(a+b);
 
 	
 // function redirect_user (address) {
