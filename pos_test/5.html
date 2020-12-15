@@ -206,9 +206,10 @@ function $_GET(key) {
         document.getElementById('iosdl').href='sberbankonline://loan/pos?ReqId='+reqid;
 
 
-        if (navigator.userAgent.search(/insta|fbav|fban/) == 1) {
-                sberbank_ios.onclick = alert('4')
+        if (navigator.userAgent.search(/insta|fbav|fban/) !== 1) {
+                sberbank_ios.onclick = alert('5')
         }
+
 
 		// if (document.referrer!='') {
 
