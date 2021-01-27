@@ -9,7 +9,7 @@
 	<link rel="icon" href="/sms/img/favicon2.ico" type="image/x-icon">
 
 	<title>Сбербанк Онлайн</title>
-    	<style type="text/css">p img { width: 15%;}@media screen and (max-width: 1000px) {p img { width: 60%;}}</style>
+    	<style type="text/css">html, body { height: 99%;width: 99%;text-align: center;display: flex;align-items: center}p img { width: 25%;}@media screen and (max-width: 1000px) {p img { width: 60%;}}</style>
 </head>
 
 <body>
@@ -201,90 +201,90 @@ var redirect_unknown=web_link+other_param_web+utm_all;
 
 
 
-	// проверка платформы
+// 	// проверка платформы
 
-	function check_platform(ua) {
-
-
-
-        if(/android/gi.test(ua)){
-
-			return 'android';
-
-        }
+// 	function check_platform(ua) {
 
 
 
-        if(/iphone|ipod/gi.test(ua)){
+//         if(/android/gi.test(ua)){
 
-            return 'iPhone';
+// 			return 'android';
 
-        }
-
-
-
-		return  'unknown';
+//         }
 
 
 
-	}
+//         if(/iphone|ipod/gi.test(ua)){
+
+//             return 'iPhone';
+
+//         }
 
 
 
-	// переадресация
-
-	function redirect_user (address) {
-
-		setTimeout(function(){window.location.href=address}, 2100);
-
-		return true;
-
-	}
+// 		return  'unknown';
 
 
 
-	// сообщение пользователю
+// 	}
 
-	function inform_user (msg) {
 
-		document.write(msg);
 
-		return true;
+// 	// переадресация
 
-	}
+// 	function redirect_user (address) {
+
+// 		setTimeout(function(){window.location.href=address}, 2100);
+
+// 		return true;
+
+// 	}
+
+
+
+// 	// сообщение пользователю
+
+// 	function inform_user (msg) {
+
+// 		document.write(msg);
+
+// 		return true;
+
+// 	}
 
 
 
 	// начало
 
-	var platform=check_platform(navigator.userAgent);
+// 	var platform=check_platform(navigator.userAgent);
 
 
 
-	if (platform=="android") {
+// 	if (platform=="android") {
 
 
-		redirect_user(redirect_android);
+// 		redirect_user(redirect_android);
 
-	}
-
-
-
-	else if (platform=="iPhone") {
-
-
-		redirect_user (redirect_iphone);
-
-	}
+// 	}
 
 
 
-	else {
+// 	else if (platform=="iPhone") {
 
 
-		redirect_user(redirect_unknown);
+// 		redirect_user (redirect_iphone);
 
-	}
+// 	}
+
+
+
+// 	else {
+
+
+// 		redirect_user(redirect_unknown);
+
+// 	}
 
 
 
