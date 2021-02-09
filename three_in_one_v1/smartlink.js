@@ -1,5 +1,4 @@
 // ЗАПОЛНЯЕТСЯ АВТОМАТИЧЕСКИ
-
 // Media Source из Appsflyer
 var af_pid = 'pid=' + af_media_source;
 
