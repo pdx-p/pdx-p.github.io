@@ -38,7 +38,7 @@ if (document.location.href.search(/=/)>0){
   if (utm_arr != '' && utm_arr[i].toLowerCase().search('utm_campaign')>=0) {var utm_campaign_sm = utm_arr[i].split('=').pop(); utm_arr[i] = ''};
   if (utm_arr != '' && utm_arr[i].toLowerCase().search('utm_content')>=0) {var utm_content_sm = utm_arr[i].split('=').pop(); utm_arr[i] = ''};
   if (utm_arr != '' && utm_arr[i].toLowerCase().search('utm_term')>=0) {var utm_term_sm = '-_-'+utm_arr[i].split('=').pop(); utm_arr[i] = ''};
-
+  if (utm_arr != '' && utm_arr[i].toLowerCase().search('need_web')>=0) { utm_arr[i] = ''};
 	}
 	
 	var other_param = encodeURIComponent(utm_arr.filter(v => v ).join('&'));
