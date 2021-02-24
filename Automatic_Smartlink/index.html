@@ -53,20 +53,25 @@
 	// НЕОБХОДИМО ЗАПОЛНИТЬ
 
 	// Media Source из Appsflyer
-	var af_media_source = 'pdx_test';
+	var af_media_source = 'update_android';
 
 	// Android Deeplink 
-	var android_dp = 'android-app://ru.sberbankmobile_alpha/android-app/ru.sberbankmobile_alpha/carloans/carloanrequest';
+	var android_dp = 'android-app://ru.sberbankmobile/android-app/ru.sberbankmobile/main';
 
 	// iOS Deeplink 
-	var ios_dp = 'sberbankonline://carloans/carloanrequest';
+	var ios_dp = 'sberbankonline://self-employed/sign-up';
 
 	// WEB Deeplink 
-	var web_link = 'https://online.sberbank.ru/CSAFront/service.do?srvUrl=/sbtsbol/private/insurance/products/claim?product=home_ins';
+	var web_link = 'https://play.google.com/store/apps/details?id=ru.sberbankmobile';
 
 	// Редирект на WEB при отсутствии приложения – true or false
 	var need_web = true;
 
+		
+		
+	var page_referrer = document.referrer
+
+	
 	</script>
 
 <script src="auto_smartlink.js"></script>
