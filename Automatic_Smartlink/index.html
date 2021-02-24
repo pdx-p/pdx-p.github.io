@@ -65,12 +65,29 @@
 	var web_link = 'https://play.google.com/store/apps/details?id=ru.sberbankmobile';
 
 	// Редирект на WEB при отсутствии приложения – true or false
-	var need_web = true;
+	var need_web = false
+	if (document.location.href.search('need_web=true')>0) 
+	{var need_web = true}
 
-		
-		
 	var page_referrer = document.referrer;
+	a = document.referrer
+	domain = a.replace(/https:\/\/www.|http:\/\/www.|https:\/\/|http:\/\/|www./,'').split('/').join('.').split('?')[0].split('#')[0];
+		
+		
+		
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
 
+	gtag('config', 'UA-21169438-11');
+	var productNameGTM = document.location.hostname.replace(/https:\/\/|http:\/\/|www./, '')+document.location.pathname.split('/').join('.').split('?')[0].split('#')[0];
+	gtag('event', 'event', {
+	'event_category': productNameGTM,
+	'event_action': 'show_details',
+	'event_label': af_media_source+"_"+domain,
+	});
+		
+	
 	
 	</script>
 
