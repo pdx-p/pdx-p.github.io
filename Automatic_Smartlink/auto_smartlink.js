@@ -4,7 +4,11 @@
 var af_pid = 'pid=' + af_media_source;
 
 // Campaign из AppsFlyer
+if (page_referrer.length>0) {
+var af_c = '&c=' + page_referrer;
+} esle {
 var af_c = '&c=' + af_media_source;
+}
 // Отличный Campaign
 //var af_c = '&c='+ 'XXX';
 
