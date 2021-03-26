@@ -1,0 +1,99 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="icon" href="/sms/img/favicon2.ico" type="image/x-icon">
+	<title>Сбербанк Онлайн</title>
+	<meta name="twitter:card" content="summary_large_image">
+	<meta property="og:title" content="СберБанк Онлайн">
+	<meta property="og:type" content="article">
+	<meta property="og:description" content="СберБанк Онлайн">
+	<meta property="og:image" content="https://www.sberbank.ru/portalserver/static/templates/%5BBBHOST%5D/RuMasterpageTemplate/static/social-ru.png" />
+	<meta name="twitter:image" content="https://www.sberbank.ru/portalserver/static/templates/%5BBBHOST%5D/RuMasterpageTemplate/static/social-ru.png" />
+	<meta property="og:image:width" content="100" />
+    <style type="text/css">.smart_img p{margin: 0;position: absolute;top: 50%;left: 50%;margin-right: -50%;transform: translate(-50%, -50%)}p {display: block;align-items: center;text-align: center;}p img { width: 50%;}@media screen and (max-width: 1000px) {p img { width: 70%;}}</style>
+</head>
+<body>
+	<div class="smart_img"><p><br><img src="https://www.sberbank.ru/common/img/uploaded/files/sms/sber_logo_main.png"><br><br><br><br>Запрос обрабатывается. <br><br>Подождите несколько секунд...</p>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-21169438-11"></script>
+		
+		<!-- Переход в СБОЛ через deeplink -->
+	
+		<!-- Google Tag Manager -->
+	
+		<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NRDX7Z"
+	
+		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	
+		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	
+		'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	
+		})(window,document,'script','dataLayer','GTM-NRDX7Z');
+	
+		</script>
+	<!-- End Google Tag Manager -->
+
+	<script>
+
+	// v 1.09
+
+
+	// !!! НЕОБХОДИМО ЗАПОЛНИТЬ !!!
+
+	// Media Source из Appsflyer
+var af_media_source = 'ccm-website';
+
+// Android Deeplink 
+var android_dp = 'android-app://ru.sberbankmobile/android-app/ru.sberbankmobile/creditcardorder/order?segmentName=Momentum&entryPoint=siteSber';
+
+// iOS Deeplink 
+var ios_dp = 'sberbankonline://creditcardorder/order?segmentName=Momentum&entryPoint=siteSber';
+
+// WEB Deeplink 
+var web_link = 'https://online.sberbank.ru/CSAFront/index.do#/service?srvUrl=/cards/credit';
+
+	// Редирект на WEB при отсутствии приложения – true or false
+	var need_web = false
+
+	// !!! ОКОНЧАНИЕ ЧАСТИ ДЛЯ ЗАПОЛНЕНИЯ !!!
+
+
+
+	if (document.location.href.search('need_web=true')>0) 
+	{var need_web = true}
+
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'UA-21169438-11');
+	var productNameGTM = document.location.hostname.replace(/https:\/\/|http:\/\/|www./, '')+document.location.pathname.split('/').join('.').split('?')[0].split('#')[0];
+	gtag('event', 'event', {
+	'event_category': productNameGTM,
+	'event_action': 'show_details',
+	'event_label': af_media_source,
+	});
+	</script>
+
+	<script src="https://sberbank.ru/common/img/uploaded/files/sms/smartlink_code/1.js"></script>
+	<style>
+
+	 body {font-size: 20px; font-family: Arial;}
+
+	</style>
+
+
+
+
+
+</body>
+
+</html>
