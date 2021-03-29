@@ -115,7 +115,7 @@ var ios_dp_code = 'sberbankonline://welfare/invest-pif/product&employeeConsultat
     if (utm_arr != '' && utm_arr[i].toLowerCase().search('utm_content')>=0) {var utm_content_sm = utm_arr[i].split('=').pop(); utm_arr[i] = ''};
     if (utm_arr != '' && utm_arr[i].toLowerCase().search('utm_term')>=0) {var utm_term_sm = '-_-'+utm_arr[i].split('=').pop(); utm_arr[i] = ''};
     if (utm_arr != '' && utm_arr[i].toLowerCase().search('need_web')>=0) { utm_arr[i] = ''};
-    if (utm_arr != '' && utm_arr[i].toLowerCase().search('productcode=')>=0) { var android_dp = android_dp_code; var ios_dp = ios_dp_code; var af_media_source = "inv" + utm_arr[i].split('=').pop() + "-website"; var web_link = web_link + "/fund"};
+    if (utm_arr != '' && utm_arr[i].toLowerCase().search('productcode=')>=0) { var android_af_dp = encodeURIComponent(android_dp_code); var ios_af_dp = encodeURIComponent(ios_dp_code); var af_media_source = "inv" + utm_arr[i].split('=').pop() + "-website"; var web_link = web_link + "/fund"};
 
         }
         
