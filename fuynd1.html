@@ -46,7 +46,6 @@
 
 	<script>
 	// v 1.09
-        	
     
     
 	// НЕОБХОДИМО ЗАПОЛНИТЬ
@@ -54,12 +53,15 @@
     var af_media_source = 'invfund-website';
 
     // Android Deeplink 
-    var android_dp = 'android-app://ru.sberbankmobile/android-app/ru.sberbankmobile/welfare/invest-pif/product?&employeeConsultation=01';
-    var android_dp_cat = 'android-app://ru.sberbankmobile/android-app/ru.sberbankmobile/pfm/marketplace?marketPlaceId=PIFCatalog';
-
+//    var android_dp = 'android-app://ru.sberbankmobile/android-app/ru.sberbankmobile/welfare/invest-pif/product?&employeeConsultation=01';
+//    var android_dp_cat = 'android-app://ru.sberbankmobile/android-app/ru.sberbankmobile/pfm/marketplace?marketPlaceId=PIFCatalog';
+var android_dp = 'android-app://ru.sberbankmobile/android-app/ru.sberbankmobile/pfm/marketplace?marketPlaceId=PIFCatalog';
+var android_dp_code = 'android-app://ru.sberbankmobile/android-app/ru.sberbankmobile/welfare/invest-pif/product?&employeeConsultation=01';
     // iOS Deeplink 
-    var ios_dp = 'sberbankonline://welfare/invest-pif/product&employeeConsultation=01';
-    var ios_dp_cat = 'sberbankonline://pfm/marketplace?marketPlaceId=PIFCatalog';
+//    var ios_dp = 'sberbankonline://welfare/invest-pif/product&employeeConsultation=01';
+//    var ios_dp_cat = 'sberbankonline://pfm/marketplace?marketPlaceId=PIFCatalog';
+var ios_dp = 'sberbankonline://pfm/marketplace?marketPlaceId=PIFCatalog';
+var ios_dp_code = 'sberbankonline://welfare/invest-pif/product&employeeConsultation=01';
     // WEB Deeplink 
     var web_link = 'https://online.sberbank.ru/CSAFront/index.do#/service?srvUrl=/sbtsbol/private/investments/funds%23';
 
@@ -113,7 +115,8 @@
     if (utm_arr != '' && utm_arr[i].toLowerCase().search('utm_content')>=0) {var utm_content_sm = utm_arr[i].split('=').pop(); utm_arr[i] = ''};
     if (utm_arr != '' && utm_arr[i].toLowerCase().search('utm_term')>=0) {var utm_term_sm = '-_-'+utm_arr[i].split('=').pop(); utm_arr[i] = ''};
     if (utm_arr != '' && utm_arr[i].toLowerCase().search('need_web')>=0) { utm_arr[i] = ''};
-    if (utm_arr != '' && utm_arr[i].toLowerCase().search('productcode=')>=0) { var af_media_source = "inv" + utm_arr[i].split('=').pop() + "-website"; var web_link = web_link + "/fund"} else {var android_dp = android_dp_cat; var ios_dp = ios_dp_cat};
+    if (utm_arr != '' && utm_arr[i].toLowerCase().search('productcode=')>=0) { var android_dp = android_dp_code; var ios_dp = ios_dp_code; var af_media_source = "inv" + utm_arr[i].split('=').pop() + "-website"; var web_link = web_link + "/fund"};
+
         }
         
         var other_param = encodeURIComponent(utm_arr.filter(v => v ).join('&'));
