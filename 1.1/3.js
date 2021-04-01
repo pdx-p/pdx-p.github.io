@@ -33,7 +33,7 @@ var getCookie = function(name) {
 var utm_cookie_arr = [getCookie('utm_source'),getCookie('utm_medium'),getCookie('utm_campaign'),getCookie('utm_content'),getCookie('utm_term')]
 	var UTM = decodeURIComponent(document.location.href.split('?').pop());
 	var utm_arr = UTM.split('&');
-	var count_utm_arr = 0;
+	var count_utm_arr = -1;
 
 // Удаляем все параметры после utm_
 	for (i=0; i<utm_arr.length; i++){if (utm_arr[i].search('utm_') >=0) { var count_utm_arr = ++i }} 
