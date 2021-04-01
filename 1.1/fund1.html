@@ -71,10 +71,9 @@
 
     var page_referrer = document.referrer.replace(/https:\/\/www.|http:\/\/www.|https:\/\/|http:\/\/|www./,'').split('/').join('.').split('?')[0].split('#')[0];
 
-	if (document.location.href.search('need_web=true')>0) 
-	{var need_web = true}
-    if (document.location.href.search('productCode')>0)
-    {var android_af_dp = encodeURIComponent(android_dp_code); var ios_af_dp = encodeURIComponent(ios_dp_code); var af_media_source = "inv" + utm_arr[i].split('=').pop() + "-website"; var web_link = web_link + "/fund"};
+	if (document.location.href.search('need_web=true')>0) {var need_web = true}
+    if (document.location.href.search('productCode')>0){for (i=0; i<utm_arr.length; i++){
+    if (utm_arr[i].toLowerCase().search('productcode=')>=0) { var android_af_dp = encodeURIComponent(android_dp_code); var ios_af_dp = encodeURIComponent(ios_dp_code); var af_media_source = "inv" + utm_arr[i].split('=').pop() + "-website"; var web_link = web_link + "/fund"};}};
 
 
 	window.dataLayer = window.dataLayer || [];
