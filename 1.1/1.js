@@ -131,4 +131,4 @@ function inform_user (msg) {document.write(msg);return true;}
 var platform=check_platform(navigator.userAgent);
 if (platform=="android") {redirect_user(redirect_android);}
 else if (platform=="iPhone") {redirect_user (redirect_iphone);}
-else {redirect_user(redirect_unknown);
+else {redirect_user(redirect_unknown);}
