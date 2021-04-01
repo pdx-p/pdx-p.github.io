@@ -66,16 +66,19 @@
 	// Редирект на WEB при отсутствии приложения – true or false
 	var need_web = false
 
+
+	if (document.location.href.search('need_web=true')>0) {var need_web = true};
+    var product_code_info = document.location.href.search('productCode')>0;
+
+    if (product_code_info == true) {
+    var android_dp = android_dp_code;
+    var ios_dp = ios_dp_code;
+    var web_link =  web_link + "/fund";
+    }
+
+
 	// !!! ОКОНЧАНИЕ ЧАСТИ ДЛЯ ЗАПОЛНЕНИЯ !!!
 
-
-    var page_referrer = document.referrer.replace(/https:\/\/www.|http:\/\/www.|https:\/\/|http:\/\/|www./,'').split('/').join('.').split('?')[0].split('#')[0];
-    var UTM_fund = document.location.href.split('?').pop()
-    var utm_arr_fund = UTM_fund.split('&');
-
-	if (document.location.href.search('need_web=true')>0) {var need_web = true}
-    for (i=0; i<utm_arr_fund.length; i++){
-    if (utm_arr_fund != '' && utm_arr_fund[i].toLowerCase().search('productcode=')>=0) { var android_af_dp = encodeURIComponent(android_dp_code); var ios_af_dp = encodeURIComponent(ios_dp_code); var af_media_source = "inv" + utm_arr_fund[i].split('=').pop() + "-website"; var web_link = web_link + "/fund" + '?' + utm_arr_fund[i]};}
 
 	window.dataLayer = window.dataLayer || [];
 	function gtag(){dataLayer.push(arguments);}
