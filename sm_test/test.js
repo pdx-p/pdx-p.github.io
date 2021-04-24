@@ -3,7 +3,7 @@
 // Media Source из Appsflyer
 //var af_pid = 'pid=' + af_media_source;
 // Campaign из AppsFlyer
-if (typeof af_c == "undefined") { var af_c = '&c=' + af_media_source;}
+if (typeof af_c == "undefined") { var af_c = 'c=' + af_media_source;}
 
 // Отличный Campaign
 //var af_c = '&c='+ 'XXX';
@@ -112,7 +112,7 @@ var af_ios_url = '';
 }
 
 // Android
-var redirect_android = 'https://app.appsflyer.com/ru.sberbankmobile'+'?'+af_c+'&is_retargeting=true'+'&af_dp='+android_af_dp+is_q_and+other_param_app+af_utm_af_adset+af_utm_af_channel+af_utm_af_ad+'&'+external_source+af_utm_source+af_utm_medium+af_utm_campaign+af_utm_content_plus+af_ga_uid_sm+af_android_url;
+var redirect_android = 'https://app.appsflyer.com/ru.sberbankmobile'+'?'+af_c+'&is_retargeting=true'+'&af_dp='+android_af_dp+is_q_and+other_param_app+af_utm_af_adset+af_utm_af_channel+af_utm_af_ad+'&'+external_source+af_utm_source+af_utm_medium+af_utm_campaign+af_utm_content_plus+af_ga_uid_sm+af_android_url+'&shortlink=smartlink';
 
 // iOS
 var redirect_iphone = 'https://sberbankonline.onelink.me/46WQ/smartlink'+'?'+'af_force_deeplink=true&'+af_c+'&is_retargeting=true'+'&af_dp='+ios_af_dp+is_q_ios+other_param_app+af_utm_af_adset+af_utm_af_channel+af_utm_af_ad+'&'+external_source+af_utm_source+af_utm_medium+af_utm_campaign+af_utm_content_plus+af_ga_uid_sm+af_ios_url;
