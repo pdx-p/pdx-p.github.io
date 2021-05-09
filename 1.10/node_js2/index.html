@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="icon" href="/sms/img/favicon2.ico" type="image/x-icon">
+        <title>Сбербанк Онлайн</title>
+        <meta name="twitter:card" content="summary_large_image">
+        <meta property="og:title" content="СберБанк Онлайн">
+        <meta property="og:type" content="article">
+        <meta property="og:description" content="СберБанк Онлайн">
+        <meta property="og:image" content="https://www.sberbank.ru/portalserver/static/templates/%5BBBHOST%5D/RuMasterpageTemplate/static/social-ru.png" />
+        <meta name="twitter:image" content="https://www.sberbank.ru/portalserver/static/templates/%5BBBHOST%5D/RuMasterpageTemplate/static/social-ru.png" />
+        <meta property="og:image:width" content="100" />
+        <!-- <style type="text/css">.smart_img p{margin: 0;position: absolute;top: 50%;left: 50%;margin-right: -50%;transform: translate(-50%, -50%)}p {display: block;align-items: center;text-align: center;}p img { width: 50%;}@media screen and (max-width: 1000px) {p img { width: 70%;}}</style> -->
+        <style type="text/css">
+        .forms {
+             /* display: block;align-items: center;text-align: center; */
+            margin: 0;position: absolute;top: 50%;left: 50%;margin-right: -50%;transform: translate(-50%, -50%)
+        }
+        input{
+            border-color: black;
+            
+        }
+            </style>
+    </head>
+<body>
+
+
+
+
+
+<form action="test.html" method="post" class='forms'>
+    <input type="text" name="media" id="media" placeholder="File_name" required><br>
+    <label for="media">https://www.sberbank.ru/sms/File_name</label><br>
+    <input type="text" name="Android" id="Android" placeholder="Android deeplink" required><br>
+    <label for="Android"> android-app://ru.sberbankmobile/android-app/ru.sberbankmobile/main</label><br>
+    <input type="text" name="iOS" id="iOS" placeholder="iOS deeplink" required><br>
+    <label for="iOS">sberbankonline://mainscreen</label><br><br>
+    <input type="text" name="WEB" id="WEB" placeholder="WEB ссылка" required><br>
+    <label for="WEB">https://www.sberbank.ru/ru/person/dist_services/inner_apps</label><br>
+
+    <input type="submit" name="submit" id="submit" placeholder="Отправить">
+    <!-- <input type="reset" placeholder="Сброс"> -->
+    
+    <script>
+    af_media = document.getElementById('media').value;
+    Android = document.getElementById('Android').value;
+    iOS = document.getElementById('iOS').value;
+    WEB = document.getElementById('WEB').value;
+    </script>
+</form>
+
+
+
+
+
+<!-- <div class="smart_img"><p><br><img src="https://www.sberbank.ru/common/img/uploaded/files/sms/sber_logo_main.png"><br><br><br><br>обрабатывается. <br><br>Подождите несколько </p></div> -->
+
+
+
+<style>
+body {font-size: 12px; font-family: Arial;}
+</style>
+</body>
+</html>
