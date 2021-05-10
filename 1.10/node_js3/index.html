@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="icon" href="/sms/img/favicon2.ico" type="image/x-icon">
+        <title>Сбербанк Онлайн</title>
+        <meta name="twitter:card" content="summary_large_image">
+        <meta property="og:title" content="СберБанк Онлайн">
+        <meta property="og:type" content="article">
+        <meta property="og:description" content="СберБанк Онлайн">
+        <meta property="og:image" content="https://www.sberbank.ru/portalserver/static/templates/%5BBBHOST%5D/RuMasterpageTemplate/static/social-ru.png" />
+        <meta name="twitter:image" content="https://www.sberbank.ru/portalserver/static/templates/%5BBBHOST%5D/RuMasterpageTemplate/static/social-ru.png" />
+        <meta property="og:image:width" content="100" />
+        <!-- <style type="text/css">.smart_img p{margin: 0;position: absolute;top: 50%;left: 50%;margin-right: -50%;transform: translate(-50%, -50%)}p {display: block;align-items: center;text-align: center;}p img { width: 50%;}@media screen and (max-width: 1000px) {p img { width: 70%;}}</style> -->
+        <style type="text/css">
+        .forms {
+             /* display: block;align-items: center;text-align: center; */
+            margin: 0;position: absolute;top: 50%;left: 50%;margin-right: -50%;transform: translate(-50%, -50%)
+        }
+        input{
+            border-color: black;
+            
+        }
+            </style>
+    </head>
+<body>
+
+    <!-- Form  -->
+<form action="" method="post" class='forms' id='Form' onsubmit="
+return false
+">
+    <input type="text" name="media" id="media" placeholder="File_name" required><br>
+    <label for="media">https://www.sberbank.ru/sms/File_name</label><br>
+    <input type="text" name="android" id="android" placeholder="android deeplink" required><br>
+    <label for="android"> android-app://ru.sberbankmobile/android-app/ru.sberbankmobile/main</label><br>
+    <input type="text" name="ios" id="ios" placeholder="ios deeplink" required><br>
+    <label for="ios">sberbankonline://mainscreen</label><br>
+    <input type="text" name="web" id="web" placeholder="web ссылка" required><br>
+    <label for="web">https://www.sberbank.ru/ru/person/dist_services/inner_apps</label><br>
+
+    <button type="button" name="button" id="button" onclick="redirect()" disabled> Redirect
+    <button type="submit" name="submit" id="submit" onclick="setCookie()"> Создать Cookie
+    <button type="reset"> Очистить форму
+
+
+</form>
+
+
+
+<script>
+
+
+// Функция для создания кук
+function setCookie(name,value) {
+    var expires = "";
+    document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+}
+
+
+
+
+// Записываем данные из таблицы в куки
+document.querySelector('#Form').addEventListener('submit', e => {
+        e.preventDefault();
+
+        const data = new FormData(e.target);
+        setCookie('media',data.get('media'));
+        setCookie('android',data.get('android'));
+        setCookie('ios',data.get('ios'));
+        setCookie('web',data.get('web'));
+
+// Включаем кнопку редиректа       
+document.getElementById(button.disabled=false)
+
+    });
+    
+// Удаляем данные из таблицы + Удаляем данные из кук + Блокировка кнопки Redirect
+document.querySelector('#Form').addEventListener('reset', e => { setTimeout(() => {
+    
+    e.preventDefault();
+
+    const data = new FormData(e.target);
+    setCookie('media',data.get('media'));
+    setCookie('android',data.get('android'));
+    setCookie('ios',data.get('ios'));
+    setCookie('web',data.get('web'));
+document.getElementById(button.disabled=true)
+
+}, 100);
+});
+
+
+// Редирект
+function redirect(){
+        document.location.href='/test.html'
+}
+
+</script>
+
+
+
+
+<!-- <div class="smart_img"><p><br><img src="https://www.sberbank.ru/common/img/uploaded/files/sms/sber_logo_main.png"><br><br><br><br>обрабатывается. <br><br>Подождите несколько </p></div> -->
+
+
+
+<style>
+body {font-size: 12px; font-family: Arial;}
+</style>
+</body>
+</html>
