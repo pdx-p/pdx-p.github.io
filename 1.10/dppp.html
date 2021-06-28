@@ -60,10 +60,7 @@ var af_pid = 'pid=' + af_media_source;
 var af_c = '&c=' + af_media_source;
 // РћС‚Р»РёС‡РЅС‹Р№ Campaign
 //var af_c = '&c='+ 'XXX';
-// Android Deeplink РґР»СЏ AppsFlyer
-var android_af_dp = encodeURIComponent(android_dp);
-// iOS Deeplink РґР»СЏ AppsFlyer
-var ios_af_dp = encodeURIComponent(ios_dp);
+
 // Р•СЃР»Рё РЅСѓР¶РµРЅ СЂРµРґРёСЂРµРєС‚ РІ WEB РїСЂРё РѕС‚СЃСѓС‚СЃС‚РІРёРё СѓСЃС‚Р°РЅРѕРІР»РµРЅРЅРѕРіРѕ РїСЂРёР»РѕР¶РµРЅРёСЏ
 var af_web_url = '';
 need_web == true ? af_web_url = web_link : need_web;
@@ -85,7 +82,14 @@ if (decodeURIComponent(document.location.href).search(/=/)>0){
   if (utm_arr != '' && utm_arr[i].toLowerCase().search('utm_term')>=0) {var utm_term_sm = '-_-'+utm_arr[i].split('=').pop(); utm_arr[i] = ''};
   if (utm_arr != '' && utm_arr[i].toLowerCase().search('need_web')>=0) { utm_arr[i] = ''};
   if (utm_arr != '' && utm_arr[i].toLowerCase().search('channel')>=0) { utm_arr[i] = ''};
-  if (utm_arr != '' && utm_arr[i].toLowerCase().search('uid')>=0) { var ios_dp = 'sberbankonline://deposits/new-deposit?' + utm_arr[i] + '&currency=RUB'; var android_dp = 'android-app://ru.sberbankmobile/android-app/ru.sberbankmobile/products/deposit?action=create&srvParams=channel=S&' + utm_arr[i] + '&currency=RUB'; utm_arr[i] = ''};
+  if (utm_arr != '' && utm_arr[i].toLowerCase().search('uid')>=0) { 
+      
+  var ios_dp = 'sberbankonline://deposits/new-deposit?' + utm_arr[i] + '&currency=RUB'; 
+  var android_dp = 'android-app://ru.sberbankmobile/android-app/ru.sberbankmobile/products/deposit?action=create&srvParams=channel=S&' + utm_arr[i] + '&currency=RUB'; 
+  var web_link = 'https://online.sberbank.ru/CSAFront/index.do#/service?srvUrl=/accounts/open&srvParams=channel%3DS%26' + encodeURIComponent(utm_arr[i]) + '%26currency%3DRUB';
+  
+  
+  utm_arr[i] = ''};
   if (utm_arr != '' && utm_arr[i].toLowerCase().search('currency')>=0) { utm_arr[i] = ''};
 	}
 	
@@ -108,6 +112,12 @@ var utm_source_sm_fc = getCookie('utm_source'), utm_medium_sm_fc = getCookie('ut
 		if(utm_content_sm_fc && utm_content_sm_fc != '') {utm_content_sm = utm_content_sm_fc};
 		if(utm_term_sm_fc && utm_term_sm_fc != '') {utm_term_sm = utm_term_sm_fc};
 	}
+
+// Android Deeplink РґР»СЏ AppsFlyer
+var android_af_dp = encodeURIComponent(android_dp);
+// iOS Deeplink РґР»СЏ AppsFlyer
+var ios_af_dp = encodeURIComponent(ios_dp);
+
 	// РџРѕР»СѓС‡Р°РµРј РєСѓРєСѓ GA
 	var ga_uid_fc = getCookie('_ga');
 	if (ga_uid_fc && ga_uid_fc != '') {
@@ -157,6 +167,7 @@ else {var utm_all = '';}
 	var af_ios_url = '';
 	}
 	
+    
 // Android
 var redirect_android = 'https://app.appsflyer.com/ru.sberbankmobile'+'?'+af_pid+af_c+'&is_retargeting=true'+'&af_dp='+android_af_dp+is_q_and+other_param_app+external_source+af_utm_source+af_utm_medium+af_utm_campaign+af_utm_content_plus+af_ga_uid_sm+af_android_url;
 // iOS
