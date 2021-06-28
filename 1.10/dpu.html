@@ -44,11 +44,11 @@
 	// Media Source из Appsflyer
 	var af_media_source = 'dpp-website';
 	// Android Deeplink 
-	var android_dp = 'android-app://ru.sberbankmobile/android-app/ru.sberbankmobile/products/deposit?action=create&srvParams=channel=S&uid=92&currency=RUB';
+	var android_dp = 'android-app://ru.sberbankmobile/android-app/ru.sberbankmobile/products/deposit?action=create&srvParams=channel=S&uid=93&currency=RUB';
 	// iOS Deeplink 
-	var ios_dp = 'sberbankonline://deposits/new-deposit?uid=92&currency=RUB';
+	var ios_dp = 'sberbankonline://deposits/new-deposit?uid=93&currency=RUB';
 	// WEB Deeplink 
-    var web_link = 'https://online.sberbank.ru/CSAFront/index.do#/service?srvUrl=/accounts/open&srvParams=channel%3DS%26uid%3D92%26currency%3DRUB'
+    var web_link = 'https://online.sberbank.ru/CSAFront/index.do#/service?srvUrl=/accounts/open&srvParams=channel%3DS%26uid%3D93%26currency%3DRUB'
 	
 	// Редирект на WEB при отсутствии приложения – true or false
 	var need_web = false
@@ -84,6 +84,9 @@ if (decodeURIComponent(document.location.href).search(/=/)>0){
   if (utm_arr != '' && utm_arr[i].toLowerCase().search('utm_content')>=0) {var utm_content_sm = utm_arr[i].split('=').pop(); utm_arr[i] = ''};
   if (utm_arr != '' && utm_arr[i].toLowerCase().search('utm_term')>=0) {var utm_term_sm = '-_-'+utm_arr[i].split('=').pop(); utm_arr[i] = ''};
   if (utm_arr != '' && utm_arr[i].toLowerCase().search('need_web')>=0) { utm_arr[i] = ''};
+  if (utm_arr != '' && utm_arr[i].toLowerCase().search('channel')>=0) { utm_arr[i] = ''};
+  if (utm_arr != '' && utm_arr[i].toLowerCase().search('uid')>=0) { utm_arr[i] = ''};
+  if (utm_arr != '' && utm_arr[i].toLowerCase().search('currency')>=0) { utm_arr[i] = ''};
 	}
 	
 	var other_param = encodeURIComponent(utm_arr.filter(v => v ).join('&'));
