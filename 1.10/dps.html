@@ -42,7 +42,7 @@
 	// v 1.09
 	// !!! НЕОБХОДИМО ЗАПОЛНИТЬ !!!
 	// Media Source из Appsflyer
-	var af_media_source = 'dps-website';
+	var af_media_source = 'dps';
 	// Android Deeplink 
 	var android_dp = 'android-app://ru.sberbankmobile/android-app/ru.sberbankmobile/products/deposit?action=create&srvParams=channel=S&uid=91&currency=RUB';
 	// iOS Deeplink 
@@ -59,11 +59,6 @@ var af_pid = 'pid=' + af_media_source;
 // Campaign РёР· AppsFlyer
 var af_c = '&c=' + af_media_source;
 // РћС‚Р»РёС‡РЅС‹Р№ Campaign
-//var af_c = '&c='+ 'XXX';
-// Android Deeplink РґР»СЏ AppsFlyer
-var android_af_dp = encodeURIComponent(android_dp);
-// iOS Deeplink РґР»СЏ AppsFlyer
-var ios_af_dp = encodeURIComponent(ios_dp);
 // Р•СЃР»Рё РЅСѓР¶РµРЅ СЂРµРґРёСЂРµРєС‚ РІ WEB РїСЂРё РѕС‚СЃСѓС‚СЃС‚РІРёРё СѓСЃС‚Р°РЅРѕРІР»РµРЅРЅРѕРіРѕ РїСЂРёР»РѕР¶РµРЅРёСЏ
 var af_web_url = '';
 need_web == true ? af_web_url = web_link : need_web;
@@ -86,9 +81,11 @@ if (decodeURIComponent(document.location.href).search(/=/)>0){
   if (utm_arr != '' && utm_arr[i].toLowerCase().search('need_web')>=0) { utm_arr[i] = ''};
   if (utm_arr != '' && utm_arr[i].toLowerCase().search('channel')>=0) { utm_arr[i] = ''};
   if (utm_arr != '' && utm_arr[i].toLowerCase().search('uid')>=0) { utm_arr[i] = ''};
-  if (utm_arr != '' && utm_arr[i].toLowerCase().search('currency')>=0) { utm_arr[i] = ''};
-	}
-	
+  if (utm_arr != '' && utm_arr[i].toLowerCase().search('currency')>=0) {
+  var ios_dp = 'sberbankonline://deposits/new-deposit?uid=91&' + utm_arr[i]; 
+  var android_dp = 'android-app://ru.sberbankmobile/android-app/ru.sberbankmobile/products/deposit?action=create&srvParams=channel=S&uid=91&'+ utm_arr[i]; 
+  var web_link = 'https://online.sberbank.ru/CSAFront/index.do#/service?srvUrl=/accounts/open&srvParams=channel%3DS%26uid%3D91%26' + encodeURIComponent(utm_arr[i]); utm_arr[i] = ''};
+}
 	var other_param = encodeURIComponent(utm_arr.filter(v => v ).join('&'));
     function replaceAll(string, search, replace) {
             return string.split(search).join(replace);
@@ -108,6 +105,12 @@ var utm_source_sm_fc = getCookie('utm_source'), utm_medium_sm_fc = getCookie('ut
 		if(utm_content_sm_fc && utm_content_sm_fc != '') {utm_content_sm = utm_content_sm_fc};
 		if(utm_term_sm_fc && utm_term_sm_fc != '') {utm_term_sm = utm_term_sm_fc};
 	}
+
+    // Android Deeplink РґР»СЏ AppsFlyer
+    var android_af_dp = encodeURIComponent(android_dp);
+    // iOS Deeplink РґР»СЏ AppsFlyer
+    var ios_af_dp = encodeURIComponent(ios_dp);
+
 	// РџРѕР»СѓС‡Р°РµРј РєСѓРєСѓ GA
 	var ga_uid_fc = getCookie('_ga');
 	if (ga_uid_fc && ga_uid_fc != '') {
@@ -116,7 +119,6 @@ var utm_source_sm_fc = getCookie('utm_source'), utm_medium_sm_fc = getCookie('ut
 		};
 	// РЎРѕР±РёСЂР°РµРј utm_content_plus - content + term
 	var utm_content_plus = utm_content_sm+utm_term_sm;
-	
 	
 	// Р¤РѕСЂРјРёСЂСѓРµРј РїРµСЂРµРјРµРЅРЅС‹Рµ РґР»СЏ AppMetrica
 	var external_source = 'external_source%3D'+af_media_source+'-_-'+utm_source_sm+'-_-'+utm_medium_sm+'-_-'+utm_campaign_sm+'-_-'+utm_content_plus;
