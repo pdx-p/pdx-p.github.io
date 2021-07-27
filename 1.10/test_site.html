@@ -1,3 +1,6 @@
+
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -115,9 +118,9 @@ function replaceAll(string, search, replace) {
 return string.split(search).join(replace);
 }
 if (other_param != '') {
-var other_param_app = other_param + '%26';
-var other_param_web = '?' + replaceAll(decodeURIComponent(utm_arr.filter(v => v ).join('&')).replace(/[\+\s]/ig, '__'), '&', '%26') // Р Р…РЎС“Р В¶Р Р…Р С• Р Т‘Р С•Р В±Р В°Р Р†Р С‘РЎвЂљРЎРЉ separator
-var other_param_web_url = '&' + replaceAll(decodeURIComponent(utm_arr.filter(v => v ).join('&')).replace(/[\+\s]/ig, '__'), '&', '%26') // Р Р…РЎС“Р В¶Р Р…Р С• Р Т‘Р С•Р В±Р В°Р Р†Р С‘РЎвЂљРЎРЉ separator
+var other_param_app = other_param + '&';
+var other_param_web = '?' + replaceAll(decodeURIComponent(utm_arr.filter(v => v ).join('&')).replace(/[\+\s]/ig, '__'), '&', '&') // Р Р…РЎС“Р В¶Р Р…Р С• Р Т‘Р С•Р В±Р В°Р Р†Р С‘РЎвЂљРЎРЉ separator
+var other_param_web_url = '&' + replaceAll(decodeURIComponent(utm_arr.filter(v => v ).join('&')).replace(/[\+\s]/ig, '__'), '&', '&') // Р Р…РЎС“Р В¶Р Р…Р С• Р Т‘Р С•Р В±Р В°Р Р†Р С‘РЎвЂљРЎРЉ separator
 };
 // Р СџР С•Р В»РЎС“РЎвЂЎР В°Р ВµР С Р С”РЎС“Р С”РЎС“ GA
 var ga_uid_fc = getCookie('_ga');
@@ -131,13 +134,13 @@ var utm_content_plus = utm_content_sm.slice(0,100)+utm_term_sm.slice(0,100);
 var external_source = 'external_source%3D'+af_media_source+'-_-'+utm_source_sm+'-_-'+utm_medium_sm+'-_-'+utm_campaign_sm+'-_-'+utm_content_plus;
 external_source = external_source.length > 221 ? external_source.slice(0,221)+'-_-'+ga_uid_sm : external_source+'-_-'+ga_uid_sm;
 if (android_af_dp.search(/\?|%3F/) > 0){
-var is_q_and = '%26';
+var is_q_and = '&';
 } else
-{ var is_q_and = '%3F'};
+{ var is_q_and = '?'};
 if (ios_af_dp.search(/\?|%3F/) > 0){
-var is_q_ios = '%26';
+var is_q_ios = '&';
 } else
-{ var is_q_ios = '%3F'};
+{ var is_q_ios = '?'};
 // Р В¤Р С•РЎР‚Р СР С‘РЎР‚РЎС“Р ВµР С Р С—Р ВµРЎР‚Р ВµР СР ВµР Р…Р Р…РЎвЂ№Р Вµ Р Т‘Р В»РЎРЏ AppsFlyer
 var af_utm_source = utm_source_sm ? '&af_sub1='+utm_source_sm : '';
 var af_utm_medium = utm_medium_sm ? '&af_sub2='+utm_medium_sm : '';
