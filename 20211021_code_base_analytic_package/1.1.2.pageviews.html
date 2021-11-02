@@ -1,0 +1,103 @@
+<!-- Yandex.Metrika counter -->
+
+<script type="text/javascript" >
+// отправляем pageview в ЯМ
+function pushYA (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounterХХХ = new Ya.Metrika({ // значение из config.id_ym
+                id:ХХХ, //значение config.id_ym
+                defer: false, // включаем если config.is_normal_pageviews == false
+                clickmap:true,
+                trackLinks:true,
+                accurateTrackBounce:true,
+                webvisor:false, //значение из config.webvisor
+                trackHash:false //значение из config.trackHash
+            });
+        } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+}
+pushYA(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/ХХХ" style="position:absolute; left:-9999px;" alt="" /><!--//подставить значение config.id_ym--></div></noscript> 
+<!-- /Yandex.Metrika counter -->
+
+
+
+<!-- Google Analytics counter -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=XXX"> // значение из config.id_ga </script> 
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+
+
+// получить идентификатор пользователя из модели GA с помощью функции ниже
+var get_cid = () => {
+  var dataLayer = window.dataLayer;
+  return function (model) {
+    var cid = model.get("clientId");
+    return cid;
+  };
+};
+const cid = getCid(); // записать в переменную для того чтобы каждый раз не вызывать его
+
+
+
+// получить идентификатор пользователя из модели ЯМ с помощью функции ниже
+var get_ym_uid = () => yaCounterXXX.getClientID(); // значение из config.id_ym
+const _ym_uid = get_ym_uid(); // записать в переменную для того чтобы каждый раз не вызывать его
+
+
+
+// получить id эксперимента GO из кук
+var get_gaexp = () => {
+  var match = document.cookie.match("(?:^|;)\\s*_gaexp=([^;]*)");
+  return match ? decodeURIComponent(match[1]) : false;
+};
+const _gaexp = get_gaexp(); // записать в переменную для того чтобы каждый раз не вызывать его
+
+
+// переопределяем модель GA
+
+  gtag('set',
+  {
+    'custom_map':
+      {
+        'dimension2': 'cid',
+        'dimension1': 'user_id',
+        'dimension13': 'session_id',
+        'dimension24': 'Segmento_UID',
+        'dimension7': 'hit_timestamp',
+        'dimension21': '_ym_uid',
+        'dimension20': '_gaexp'
+          }
+  });
+
+
+// отправляем pageview с переопредленной моделью GA
+
+  gtag('config', XXX, { // значение из config.id_ga
+  send_page_view: true, // значение из config.is_normal_pageviews
+  'custom_map': {'cid': cid,
+                 'user_id': user_id,
+                 'session_id': session_id,
+                 'Segmento_UID': Segmento_UID,
+                 'hit_timestamp': hit_timestamp,
+                 '_ym_uid': _ym_uid,
+                 '_gaexp': _gaexp}}); 
+</script>
+<!-- Google Analytics counter -->
+

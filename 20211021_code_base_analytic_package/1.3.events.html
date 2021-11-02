@@ -1,0 +1,77 @@
+<!-- Сначала информацию о событиях необходимо отправить в dataLayer -->
+
+
+<script>
+// Скрипт авторазметки событий (отправляет информацию о каждом клике в аналитические системы)
+
+
+  document.addEventListener('click', ()=> {
+
+  var DLevent = 'SATELLITE_Other_'+location.hostname+location.pathname.replace('/','.');  // [?] не уверен, что тут достаточно одного replace
+
+  dataLayer.push({
+    event: DLevent,
+    action: "click_any",
+    label:"" // наполняем по следующей схеме: click text + '_' + class element // код на усмотрение разработчиков сайта
+    }
+  );
+  })
+
+</script>
+
+
+
+<script>
+// Кастомная разметка событий (реализуется на стороне разработчиков сайта)
+
+var DLevent = 'SATELLITE_Other_'+location.hostname+location.pathname.replace('/','.') // [?] не уверен, что тут достаточно одного replace
+
+XXX.dataLayer.push({ // где ХХХ конкретное условие вызова datalayer.push({})
+  event: DLevent,
+  action: "", // указываем значение из ТЗ (это может быть form_submit, show_section_XXX и т.д.)
+  label:"" // указываем значение из ТЗ (это может быть formNameXXX, click_url и т.д.)
+})
+</script>
+
+<!--Теперь полученный dataLayer необходимо отправить в аналитические системы -->
+
+<script>
+
+  if (window.dataLayer) {
+    var data = window.dataLayer[window.dataLayer.length - 1]
+    var data_action = data.Action || data.action
+//    if (data.label && data.event && !data.event.match(/^gtm\./)) {
+     data.label = data.label.split('/').join('.').split('?')[0].split('#')[0]
+//    } else {
+//      data.label = '.....'
+//    }
+
+// Отправляем событие с event, action, label в GA
+    if (data_action) {
+      ga( // [?] не уверен, что тут достаточно одного replace
+        'gtag_XXX.send', // значение из config.id_ga
+        'event',
+        data.event,
+        data_action,
+        data.label,
+        { nonInteraction: true }
+      )
+    }
+// Отправляем событие с event, action, label в ЯМ с помощью reachgoal
+
+      var data_label_URL = data.label + '_' + window.location.hostname + window.location.pathname + window.location.search + window.location.hash
+      var yaParams = {}
+      yaParams[data.event] = {}
+      yaParams[data.event][data_action] = data_label_URL;
+
+// Отправляем событие с event, action, label в ЯМ с помощью параметров визита
+
+      if (typeof yaCounterXXX != 'undefined') {  // значение из config.id_ym
+        yaCounterXXX.params(yaParams) // значение из config.id_ym
+        yaCounterXXX.reachGoal( // значение из config.id_ym
+          data.event + '_' + data_action + '_' + data.label
+        )
+      }
+    
+  }
+</script>
