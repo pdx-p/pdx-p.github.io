@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="/sms/img/favicon2.ico" type="image/x-icon">
+<title>Сбербанк Онлайн</title>
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:title" content="СберБанк Онлайн">
+<meta property="og:type" content="article">
+<meta property="og:description" content="СберБанк Онлайн">
+<meta property="og:image" content="https://www.sberbank.ru/portalserver/static/templates/%5BBBHOST%5D/RuMasterpageTemplate/static/social-ru.png" />
+<meta name="twitter:image" content="https://www.sberbank.ru/portalserver/static/templates/%5BBBHOST%5D/RuMasterpageTemplate/static/social-ru.png" />
+<meta property="og:image:width" content="100" />
+<style type="text/css">.smart_img p{margin: 0;position: absolute;top: 50%;left: 50%;margin-right: -50%;transform: translate(-50%, -50%)}p {display: block;align-items: center;text-align: center;}p img { width: 50%;}@media screen and (max-width: 1000px) {p img { width: 70%;}}</style>
+</head>
+<body>
+<div class="smart_img"><p><br><img src="https://www.sberbank.ru/common/img/uploaded/files/sms/sber_logo_main.png"><br><br><br><br>Запрос обрабатывается. <br><br>Подождите несколько секунд...</p>
+<!-- Yandex.Metrika counter -->
+
+<script type="text/javascript" >
+    // отправляем pageview в ЯМ
+    function pushYA (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounterХХХ = new Ya.Metrika({ // значение из config.id_ym
+                    id:ХХХ, //значение config.id_ym
+                    defer: false, // включаем если config.is_normal_pageviews == false
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true,
+                    webvisor:false, //значение из config.webvisor
+                    trackHash:false //значение из config.trackHash
+                });
+            } catch(e) { }
+        });
+    
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/watch.js";
+    
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+    }
+    pushYA(document, window, "yandex_metrika_callbacks");
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/ХХХ" style="position:absolute; left:-9999px;" alt="" /><!--//подставить значение config.id_ym--></div></noscript> 
+    <!-- /Yandex.Metrika counter -->
+    
+    
+    
+    <!-- Google Analytics counter -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=XXX"> // значение из config.id_ga </script> 
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+    
+    
+    // получить идентификатор пользователя из модели GA с помощью функции ниже
+    var get_cid = () => {
+      var dataLayer = window.dataLayer;
+      return function (model) {
+        var cid = model.get("clientId");
+        return cid;
+      };
+    };
+    const cid = getCid(); // записать в переменную для того чтобы каждый раз не вызывать его
+    
+    
+    
+    // получить идентификатор пользователя из модели ЯМ с помощью функции ниже
+    var get_ym_uid = () => yaCounterXXX.getClientID(); // значение из config.id_ym
+    const _ym_uid = get_ym_uid(); // записать в переменную для того чтобы каждый раз не вызывать его
+    
+    
+    
+    // получить id эксперимента GO из кук
+    var get_gaexp = () => {
+      var match = document.cookie.match("(?:^|;)\\s*_gaexp=([^;]*)");
+      return match ? decodeURIComponent(match[1]) : false;
+    };
+    const _gaexp = get_gaexp(); // записать в переменную для того чтобы каждый раз не вызывать его
+    
+    
+    // переопределяем модель GA
+    
+      gtag('set',
+      {
+        'custom_map':
+          {
+            'dimension2': 'cid',
+            'dimension1': 'user_id',
+            'dimension13': 'session_id',
+            'dimension24': 'Segmento_UID',
+            'dimension7': 'hit_timestamp',
+            'dimension21': '_ym_uid',
+            'dimension20': '_gaexp'
+              }
+      });
+    
+    
+    // отправляем pageview с переопредленной моделью GA
+    
+      gtag('config', XXX, { // значение из config.id_ga
+      send_page_view: true, // значение из config.is_normal_pageviews
+      'custom_map': {'cid': cid,
+                     'user_id': user_id,
+                     'session_id': session_id,
+                     'Segmento_UID': Segmento_UID,
+                     'hit_timestamp': hit_timestamp,
+                     '_ym_uid': _ym_uid,
+                     '_gaexp': _gaexp}}); 
+    </script>
+    <!-- Google Analytics counter -->
+
+
+
+
+<!-- Сначала информацию о событиях необходимо отправить в dataLayer -->
+
+
+<script>
+    // Скрипт авторазметки событий (отправляет информацию о каждом клике в аналитические системы)
+    
+    
+      document.addEventListener('click', ()=> {
+    
+      var DLevent = 'SATELLITE_Other_'+location.hostname+location.pathname.replace('/','.');  // [?] не уверен, что тут достаточно одного replace
+    
+      dataLayer.push({
+        event: DLevent,
+        action: "click_any",
+        label:"" // наполняем по следующей схеме: click text + '_' + class element // код на усмотрение разработчиков сайта
+        }
+      );
+      })
+    
+    </script>
+    
+    
+    
+    <script>
+    // Кастомная разметка событий (реализуется на стороне разработчиков сайта)
+    
+    var DLevent = 'SATELLITE_Other_'+location.hostname+location.pathname.replace('/','.') // [?] не уверен, что тут достаточно одного replace
+    
+    XXX.dataLayer.push({ // где ХХХ конкретное условие вызова datalayer.push({})
+      event: DLevent,
+      action: "", // указываем значение из ТЗ (это может быть form_submit, show_section_XXX и т.д.)
+      label:"" // указываем значение из ТЗ (это может быть formNameXXX, click_url и т.д.)
+    })
+    </script>
+    
+    <!--Теперь полученный dataLayer необходимо отправить в аналитические системы -->
+    
+    <script>
+    
+      if (window.dataLayer) {
+        var data = window.dataLayer[window.dataLayer.length - 1]
+        var data_action = data.Action || data.action
+    //    if (data.label && data.event && !data.event.match(/^gtm\./)) {
+         data.label = data.label.split('/').join('.').split('?')[0].split('#')[0]
+    //    } else {
+    //      data.label = '.....'
+    //    }
+    
+    // Отправляем событие с event, action, label в GA
+        if (data_action) {
+          ga( // [?] не уверен, что тут достаточно одного replace
+            'gtag_XXX.send', // значение из config.id_ga
+            'event',
+            data.event,
+            data_action,
+            data.label,
+            { nonInteraction: true }
+          )
+        }
+    // Отправляем событие с event, action, label в ЯМ с помощью reachgoal
+    
+          var data_label_URL = data.label + '_' + window.location.hostname + window.location.pathname + window.location.search + window.location.hash
+          var yaParams = {}
+          yaParams[data.event] = {}
+          yaParams[data.event][data_action] = data_label_URL;
+    
+    // Отправляем событие с event, action, label в ЯМ с помощью параметров визита
+    
+          if (typeof yaCounterXXX != 'undefined') {  // значение из config.id_ym
+            yaCounterXXX.params(yaParams) // значение из config.id_ym
+            yaCounterXXX.reachGoal( // значение из config.id_ym
+              data.event + '_' + data_action + '_' + data.label
+            )
+          }
+        
+      }
+    </script>
+
+
+    <script src="https://pdx-p.github.io/20211021_code_base_analytic_package/0.0.config.js"></script>
+    <script src="https://pdx-p.github.io/20211021_code_base_analytic_package/1.1.1.pageviews.js"></script>
+    
+<style>
+body {font-size: 20px; font-family: Arial;}
+</style>
+</body>
+</html>
