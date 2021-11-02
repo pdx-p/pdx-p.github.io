@@ -27,8 +27,8 @@
 function pushYA (d, w, c) {
     (w[c] = w[c] || []).push(function() {
         try {
-            w.yaCounterХХХ = new Ya.Metrika({ // значение из config.id_ym
-                id:ХХХ, //значение config.id_ym
+            w.yaCounterid_ym = new Ya.Metrika({ // значение из config.id_ym
+                id:id_ym, //значение config.id_ym
                 defer: false, // включаем если config.is_normal_pageviews == false
                 clickmap:true,
                 trackLinks:true,
@@ -50,11 +50,11 @@ function pushYA (d, w, c) {
 }
 pushYA(document, window, "yandex_metrika_callbacks");
 </script>
-<noscript><div><img src="https://mc.yandex.ru/watch/ХХХ" style="position:absolute; left:-9999px;" alt="" /><!--//подставить значение config.id_ym--></div></noscript> 
+<noscript><div><img src="https://mc.yandex.ru/watch/id_ym" style="position:absolute; left:-9999px;" alt="" /><!--//подставить значение config.id_ym--></div></noscript> 
 <!-- /Yandex.Metrika counter --> 
  
 <!-- Google Analytics counter -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=XXX"> // значение из config.id_ga </script> 
+<script async src="https://www.googletagmanager.com/gtag/js?id=id_ga"> // значение из config.id_ga </script> 
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -71,7 +71,7 @@ var get_cid = () => {
 const cid = getCid(); // записать в переменную для того чтобы каждый раз не вызывать его 
  
 // получить идентификатор пользователя из модели ЯМ с помощью функции ниже
-var get_ym_uid = () => yaCounterXXX.getClientID(); // значение из config.id_ym
+var get_ym_uid = () => yaCounterid_ym.getClientID(); // значение из config.id_ym
 const _ym_uid = get_ym_uid(); // записать в переменную для того чтобы каждый раз не вызывать его 
  
 // получить id эксперимента GO из кук
@@ -95,7 +95,7 @@ const _gaexp = get_gaexp(); // записать в переменную для �
           }
   });  
 // отправляем pageview с переопредленной моделью GA 
-  gtag('config', XXX, { // значение из config.id_ga
+  gtag('config', id_ga, { // значение из config.id_ga
   send_page_view: true, // значение из config.is_normal_pageviews
   'custom_map': {'cid': cid,
                  'user_id': user_id,
@@ -142,7 +142,7 @@ XXX.dataLayer.push({ // где ХХХ конкретное условие выз
 // Отправляем событие с event, action, label в GA
     if (data_action) {
       ga( // [?] не уверен, что тут достаточно одного replace
-        'gtag_XXX.send', // значение из config.id_ga
+        'gtag_id_ga.send', // значение из config.id_ga
         'event',
         data.event,
         data_action,
@@ -156,9 +156,9 @@ XXX.dataLayer.push({ // где ХХХ конкретное условие выз
       yaParams[data.event] = {}
       yaParams[data.event][data_action] = data_label_URL; 
 // Отправляем событие с event, action, label в ЯМ с помощью параметров визита 
-      if (typeof yaCounterXXX != 'undefined') {  // значение из config.id_ym
-        yaCounterXXX.params(yaParams) // значение из config.id_ym
-        yaCounterXXX.reachGoal( // значение из config.id_ym
+      if (typeof yaCounterid_ym != 'undefined') {  // значение из config.id_ym
+        yaCounterid_ym.params(yaParams) // значение из config.id_ym
+        yaCounterid_ym.reachGoal( // значение из config.id_ym
           data.event + '_' + data_action + '_' + data.label
         )
       }
