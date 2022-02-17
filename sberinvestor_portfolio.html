@@ -219,19 +219,6 @@
             const ga_uid_fc = GetCookie('_ga')
             const ga_uid_sm = ga_uid_fc && ga_uid_fc !== '' ? ga_uid_fc.split(/\./).slice(2, 4).join('.') : ''
 
-            const external_source = {
-                external_source: [
-                    [
-                        appsFlyerMediaSource,
-                        utmSourceSm,
-                        utmMediumSm,
-                        utmCampainSm,
-                        utmContentSum
-                    ].join('-_-').slice(0, 221),
-                    ga_uid_sm
-                ].join('-_-')
-            }
-
             const appsFlyerParams = {
 
                 pid: 'SL_' + utmSourceSm,
