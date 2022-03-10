@@ -1,0 +1,87 @@
+
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="/sms/img/favicon2.ico" type="image/x-icon">
+<title>Сбербанк Онлайн</title>
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:title" content="СберБанк Онлайн">
+<meta property="og:type" content="article">
+<meta property="og:description" content="СберБанк Онлайн">
+<meta property="og:image" content="https://www.sberbank.ru/portalserver/static/templates/%5BBBHOST%5D/RuMasterpageTemplate/static/social-ru.png" />
+<meta name="twitter:image" content="https://www.sberbank.ru/portalserver/static/templates/%5BBBHOST%5D/RuMasterpageTemplate/static/social-ru.png" />
+<meta property="og:image:width" content="100" />
+<style type="text/css">.smart_img p{margin: 0;position: absolute;top: 50%;left: 50%;margin-right: -50%;transform: translate(-50%, -50%)}p {display: block;align-items: center;text-align: center;}p img { width: 50%;}@media screen and (max-width: 1000px) {p img { width: 70%;}}</style>
+</head>
+<body>
+<div class="smart_img"><p><br><img src="https://www.sberbank.ru/common/img/uploaded/files/sms/sber_logo_main.png"><br><br><br><br>Запрос обрабатывается. <br><br>Подождите несколько секунд...</p>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-21169438-11"></script>
+
+<!-- Переход в СБОЛ через deeplink -->
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NRDX7Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NRDX7Z');
+
+</script>
+<!-- End Google Tag Manager -->
+
+<script src="https://pdx-p.github.io/sv152.js"></script>
+
+<script>
+
+// v 1.09
+// !!! НЕОБХОДИМО ЗАПОЛНИТЬ !!!
+// Media Source из Appsflyer
+var af_media_source = 'ihomo';
+
+// Android Deeplink 
+var android_dp = 'android-app://ru.sberbankmobile/android-app/ru.sberbankmobile/welfare/products/efs_insurance?productCode=home_ins2';
+
+// iOS Deeplink 
+var ios_dp = 'sberbankonline://insurance/sales?productCode=home_ins2';
+
+// WEB Deeplink 
+var web_link = 'https://online.sber.insure/store/propertyins';
+
+// Редирект на WEB при отсутствии приложения – true or false
+var need_web = true
+if (document.location.href.search('need_web=true')>0) {var need_web = true};
+
+
+window.sv_partner = new SberVisor({
+url: 'https://sa.online.sberbank.ru:8098/metrics/partners',
+subId: '333',
+buffer: 1, //размер пакета
+apiKey: '333',
+sberId: '222',
+appId: '111' })
+
+window.sv_partner.push({
+eventCategory: 'Показ',
+eventAction: 'Оплата корзины',
+eventType: 'Клик' })
+
+window.sv_partner.push({
+eventCategory: 'Целевое действие',
+eventAction: 'Оплата корзины',
+eventType: 'Клик' })
+
+</script>
+
+
+
+
+<style>
+body {font-size: 20px; font-family: Arial;}
+</style>
+</body>
+</html>
