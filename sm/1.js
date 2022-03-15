@@ -170,28 +170,6 @@ for (i = 0; i < yaCounter_ID.length; i++) {
 if (typeof (yaCounter_ID[i]) != 'undefined') {
 yaCounter_ID[i].userParams({
  clientId: yaCounter_ID[i].getClientID(),
- Session_ID: {{Session ID}},
- Яндекс_Метрика_UID: {{Яндекс Метрика UID}},
- Segmento_UID: {{Segmento UID}},
- RetailRocket: {{RetailRocket}},
- Sbrf_segment: {{Sbrf.segment}},
- sbrf_exp: {{sbrf.exp}},
- X_PersType: {{X-PersType}},
- X_PersType_NY: {{X-PersType-NY}},
- BB_anonymousUserId: {{BB_anonymousUserId}},
- GA_cookie_exp: {{GA_cookie_exp}},
- iap_uid: {{iap.uid}},
- andata_ubtcuid: {{andata_ubtcuid}},
- appsflyer_id: {{appsflyer_id}},
- getClickId: {{getClickId}},
- get_from_from_URL: {{get from from URL}},
- sbrf_asap_uho_counter: {{sbrf.asap-uho.counter}},
- Region_TB: {{Region_TB}},
- window_navigator_userAgent: {{window.navigator.userAgent}},
- Cookie_fbp: {{Cookie - _fbp}},
- Cookie_sa: {{Cookie - _sa}},
- screen_color: {{screen color}},
- ga_cid: {{CID_GA_FROM_COOKIE}}
 })
 }}}
 
