@@ -1,3 +1,6 @@
+
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -39,10 +42,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 var af_media_source = 'ibrokkk';
 
 // Android Deeplink 
-var android_dp = 'android-app://ru.sberbankmobile/android-app/ru.sberbankmobile/brokerage/transfer?agreement='+agreement;
+var android_dp = 'android-app://ru.sberbankmobile/android-app/ru.sberbankmobile/brokerage/transfer?agreement=';
 
 // iOS Deeplink 
-var ios_dp = 'sberbankonline://brokerage/transfer?agreement='+agreement;
+var ios_dp = 'sberbankonline://brokerage/transfer?agreement=';
 
 // WEB Deeplink 
 var web_link = 'https://online.sberbank.ru/CSAFront/service.do?srvUrl=';
@@ -131,9 +134,9 @@ var utm_content_plus = utm_content_sm.slice(0,100)+utm_term_sm.slice(0,100);
 
 
 // Android Deeplink Р   Р СћРІР‚ВР   Р вЂ™Р’В»Р  Р Р‹Р  Р РЏ AppsFlyer
-var android_af_dp = encodeURIComponent(android_dp);
+var android_af_dp = encodeURIComponent(android_dp+agreement);
 // iOS Deeplink Р   Р СћРІР‚ВР   Р вЂ™Р’В»Р  Р Р‹Р  Р РЏ AppsFlyer
-var ios_af_dp = encodeURIComponent(ios_dp);
+var ios_af_dp = encodeURIComponent(ios_dp+agreement);
 
 var external_source = 'external_source%3D'+af_media_source+'-_-'+utm_source_sm+'-_-'+utm_medium_sm+'-_-'+utm_campaign_sm+'-_-'+utm_content_plus;
 external_source = external_source.length > 221 ? external_source.slice(0,221)+'-_-'+ga_uid_sm : external_source+'-_-'+ga_uid_sm;
