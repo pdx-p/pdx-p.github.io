@@ -1,6 +1,3 @@
-
-
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -131,6 +128,13 @@ var ga_uid_sm = ga_uid_arr[2]+'.'+ga_uid_arr[3];
 // Р   Р  Р вЂ№Р   Р РЋРІР‚СћР   Р вЂ™Р’В±Р   Р РЋРІР‚ВР  Р Р‹Р  РІР‚С™Р   Р вЂ™Р’В°Р   Р вЂ™Р’ВµР   Р РЋР’В utm_content_plus - content + term
 var utm_content_plus = utm_content_sm.slice(0,100)+utm_term_sm.slice(0,100);
 // Р   Р вЂ™Р’В¤Р   Р РЋРІР‚СћР  Р Р‹Р  РІР‚С™Р   Р РЋР’ВР   Р РЋРІР‚ВР  Р Р‹Р  РІР‚С™Р  Р Р‹Р РЋРІР‚СљР   Р вЂ™Р’ВµР   Р РЋР’В Р   Р РЋРІР‚вЂќР   Р вЂ™Р’ВµР  Р Р‹Р  РІР‚С™Р   Р вЂ™Р’ВµР   Р РЋР’ВР   Р вЂ™Р’ВµР   Р  РІР‚В¦Р   Р  РІР‚В¦Р  Р Р‹Р Р†Р вЂљРІвЂћвЂ“Р   Р вЂ™Р’Вµ Р   Р СћРІР‚ВР   Р вЂ™Р’В»Р  Р Р‹Р  Р РЏ AppMetrica
+
+
+// Android Deeplink Р   Р СћРІР‚ВР   Р вЂ™Р’В»Р  Р Р‹Р  Р РЏ AppsFlyer
+var android_af_dp = encodeURIComponent(android_dp);
+// iOS Deeplink Р   Р СћРІР‚ВР   Р вЂ™Р’В»Р  Р Р‹Р  Р РЏ AppsFlyer
+var ios_af_dp = encodeURIComponent(ios_dp);
+
 var external_source = 'external_source%3D'+af_media_source+'-_-'+utm_source_sm+'-_-'+utm_medium_sm+'-_-'+utm_campaign_sm+'-_-'+utm_content_plus;
 external_source = external_source.length > 221 ? external_source.slice(0,221)+'-_-'+ga_uid_sm : external_source+'-_-'+ga_uid_sm;
 if (android_af_dp.search(/\?|%3F/) > 0){
@@ -143,10 +147,6 @@ var is_q_ios = '%26';
 { var is_q_ios = '%3F'};
 
 
-// Android Deeplink Р   Р СћРІР‚ВР   Р вЂ™Р’В»Р  Р Р‹Р  Р РЏ AppsFlyer
-var android_af_dp = encodeURIComponent(android_dp);
-// iOS Deeplink Р   Р СћРІР‚ВР   Р вЂ™Р’В»Р  Р Р‹Р  Р РЏ AppsFlyer
-var ios_af_dp = encodeURIComponent(ios_dp);
 
 // Р   Р вЂ™Р’В¤Р   Р РЋРІР‚СћР  Р Р‹Р  РІР‚С™Р   Р РЋР’ВР   Р РЋРІР‚ВР  Р Р‹Р  РІР‚С™Р  Р Р‹Р РЋРІР‚СљР   Р вЂ™Р’ВµР   Р РЋР’В Р   Р РЋРІР‚вЂќР   Р вЂ™Р’ВµР  Р Р‹Р  РІР‚С™Р   Р вЂ™Р’ВµР   Р РЋР’ВР   Р вЂ™Р’ВµР   Р  РІР‚В¦Р   Р  РІР‚В¦Р  Р Р‹Р Р†Р вЂљРІвЂћвЂ“Р   Р вЂ™Р’Вµ Р   Р СћРІР‚ВР   Р вЂ™Р’В»Р  Р Р‹Р  Р РЏ AppsFlyer
 var af_utm_source = utm_source_sm ? '&af_sub1='+utm_source_sm : '';
