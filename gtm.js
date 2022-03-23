@@ -1,7 +1,7 @@
 
 // Copyright 2012 Google Inc. All rights reserved.
 (function(w,g){w[g]=w[g]||{};w[g].e=function(s){return eval(s);};})(window,'google_tag_manager');(function(){
-
+console.log("NEW_GTM")
 var data = {
 "resource": {
   "version":"2411",
