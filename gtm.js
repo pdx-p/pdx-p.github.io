@@ -1,21 +1,69 @@
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+ym_sberbank = function() {
+ (function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter1175048 = new Ya.Metrika({id:1175048, 
+            // params:{'ip': userip},
+            // webvisor:true,
+            triggerEvent:true,                             
+            clickmap:false,
+            trackLinks:true,
+            trackHash:true,
+            params:window.yaParams,                             
+            accurateTrackBounce:true});
+            // Счетчик на кросдомен по всем доменам
+            w.yaCounter31643078 = new Ya.Metrika({id: 31643078, 
+            params:window.yaParams});
+            // Счетчик на кросдомен по Сбербанку и СБОЛ  
+            w.yaCounter34972370 = new Ya.Metrika({id:34972370, 
+            clickmap:true, 
+            trackLinks:true, 
+            accurateTrackBounce:true, 
+            trackHash:true, 
+            ut:"noindex", 
+            params:window.yaParams});
+        } catch(e) { }
+    });
 
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+
+})(document, window, "yandex_metrika_callbacks");
+}
+  
+ym_sberbank();
+</script>
+
+<!-- /Yandex.Metrika counter -->
+<noscript><div><img src="https://mc.yandex.ru/watch/1175048" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  
 // Copyright 2012 Google Inc. All rights reserved.
 (function(w,g){w[g]=w[g]||{};w[g].e=function(s){return eval(s);};})(window,'google_tag_manager');(function(){
 
-  console.log("eeeeeeeeee")
-  console.log("eeeeeeeeee")
-  console.log("wwwwwww")
-  console.log("eeeeeeeeee")
-  console.log("wwweeeeeeeeeewwww")
-  console.log("wwweeeeeeeeeewwww")
-  console.log("wwweeeeeeeeeewwww")
-  console.log("wwweeeeeeeeeewwww")
-  console.log("wwweeeeeeeeeewwww")
-  console.log("eeeeeeeeee")
-  console.log("eeeeeeeeee")
-  console.log("wwwwwww")
-  console.log("eeeeeeeeee")
-  console.log("eeeeeeeeee")
+  console.log("qqqqqqqq")
+  console.log("qqqqqqqq")
+  console.log("qqqqqqqq")
+  console.log("qqqqqqqq")
+  console.log("qqqqqqqq")
+  console.log("qqqqqqqq")
+  console.log("qqqqqqqq")
+  console.log("qqqqqqqq")
+  console.log("eeeeeeeeeeeeeeeeeeee")
+  console.log("eeeeeeeeeeeeeeeeeeee")
+  console.log("eeeeeeeeeeeeeeeeeeee")
+  console.log("eeeeeeeeeeeeeeeeeeee")
+  console.log("eeeeeeeeeeeeeeeeeeee")
+  console.log("eeeeeeeeeeeeeeeeeeee")
 
 var data = {
 "resource": {
