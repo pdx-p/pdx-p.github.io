@@ -3,12 +3,6 @@
 (function(w,g){w[g]=w[g]||{};w[g].e=function(s){return eval(s);};})(window,'google_tag_manager');(function(){
 
 
-console.log("испохабили")
-console.log("испохабили")
-console.log("испохабили")
-console.log("испохабили")
-console.log("испохабили")
-
   
 var data = {
 "resource": {
