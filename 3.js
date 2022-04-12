@@ -1,8 +1,7 @@
-
+console.log("test_js")
 // v 1.10
 // Р   Р Р†Р вЂљРІР‚СњР   Р РЋРІР‚в„ўР   Р РЋРЎСџР   Р РЋРІР‚С”Р   Р Р†Р вЂљРЎвЂќР   Р РЋРЎС™Р   Р  РІР‚РЋР   Р Р†Р вЂљРЎС›Р   Р РЋРЎвЂєР   Р  Р вЂ№Р   Р  РІР‚РЋ Р   Р РЋРІР‚в„ўР   Р Р†Р вЂљРІвЂћСћР   Р РЋРЎвЂєР   Р РЋРІР‚С”Р   Р РЋРЎв„ўР   Р РЋРІР‚в„ўР   Р РЋРЎвЂєР   Р вЂ™Р’ВР   Р вЂ™Р’В§Р   Р Р†Р вЂљРЎС›Р   Р  Р вЂ№Р   Р РЋРІвЂћСћР   Р вЂ™Р’В
 // Media Source Р   Р РЋРІР‚ВР   Р вЂ™Р’В· Appsflyer
-if (web_link.search("person/dist_services/inner_apps")>=0) { var web_link = 'https://online.sberbank.ru/CSAFront/index.do#/'} 
 var af_pid = 'pid=' + af_media_source;
 // Campaign Р   Р РЋРІР‚ВР   Р вЂ™Р’В· AppsFlyer
 if (typeof af_c == "undefined") { var af_c = '&c=' + af_media_source;}
@@ -95,7 +94,8 @@ if (web_link.toLowerCase().search('sberbank.ru')<0){
 var utm_all=separator_web+web_utm_source+web_utm_medium+web_utm_campaign+web_utm_content+web_utm_term;}
 else {var utm_all = '';}
 
-var af_ios_url_iiii = '&af_ios_url=' + encodeURIComponent(web_link+other_param_web_url+utm_all)+'&af_param_forwarding=false';
+if (web_link.search("person/dist_services/inner_apps")>=0) { var web_link_ios = 'https://online.sberbank.ru/CSAFront/index.do#/'}
+var af_ios_url_iiii = '&af_ios_url=' + encodeURIComponent(web_link_ios+other_param_web_url+utm_all)+'&af_param_forwarding=false';
 
 if (af_web_url !=''){
 var af_android_url = '&af_android_url=' + encodeURIComponent(af_web_url+other_param_web_url+utm_all)+'&af_param_forwarding=false';
