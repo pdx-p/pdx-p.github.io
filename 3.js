@@ -1,6 +1,9 @@
-console.log("4.js")
+
+
+console.log("6.js")
 var web_link_ios = web_link;
 var web_link_android = web_link;
+var web_link_web = web_link;
 // v 1.10
 var af_pid = 'pid=' + af_media_source;
 
@@ -59,13 +62,13 @@ var other_param_app = other_param + '%26';
 var ga_uid_fc = getCookie('_ga');
 if (ga_uid_fc && ga_uid_fc != '') {
 var ga_uid_arr = ga_uid_fc.split(/\./);
-var ga_uid_sm = ga_uid_arr[2]+'.'+ga_uid_arr[3];
+var ga_uid_sm = ("_y_" +getCookie('_ym_uid') + "_d_" +getCookie('___dmpkit___') + "_g_" +ga_uid_arr[2]+'.'+ga_uid_arr[3]).slice(0,90)
 };
 
 var utm_content_plus = utm_content_sm.slice(0, 100) + utm_term_sm.slice(0, 100);
 
 var external_source = 'external_source%3D'+af_media_source+'-_-'+utm_source_sm+'-_-'+utm_medium_sm+'-_-'+utm_campaign_sm+'-_-'+utm_content_plus;
-external_source = external_source.length > 221 ? external_source.slice(0,221)+'-_-'+ga_uid_sm : external_source+'-_-'+ga_uid_sm;
+external_source = external_source.length > 165 ? external_source.slice(0,165)+'-_-'+ga_uid_sm : external_source+'-_-'+ga_uid_sm;
 if (android_af_dp.search(/\?|%3F/) > 0){
 var is_q_and = '%26';
 } else
@@ -97,6 +100,7 @@ else {var utm_all = '';}
 
 if (web_link.search("person/dist_services/inner_apps")>=0) { var web_link_ios = 'https://online.sberbank.ru/CSAFront/index.do#/'}
 if (web_link.search("person/dist_services/inner_apps")>=0) { var web_link_android = 'https://cdn.sberbank.ru/appdistr/SberbankOnline.apk'}
+if (web_link.search("person/dist_services/inner_apps")>=0) { var web_link_web = 'https://online.sberbank.ru/CSAFront/index.do#/'}
 
 var af_ios_url_xx = '&af_ios_url=' + encodeURIComponent(web_link_ios+other_param_web_url+utm_all)+'&af_param_forwarding=false';
 var af_android_url_xx = '&af_android_url=' + encodeURIComponent(web_link_android+other_param_web_url+utm_all)+'&af_param_forwarding=false';
@@ -106,7 +110,7 @@ var redirect_android = 'https://app.appsflyer.com/ru.sberbankmobile'+'?'+af_pid+
 // iOS
 var redirect_iphone = 'https://sberbankonline.onelink.me/46WQ'+'?'+'af_force_deeplink=true&'+af_pid+af_c+'&is_retargeting=true'+'&af_dp='+ios_af_dp+is_q_ios+other_param_app+external_source+af_utm_source+af_utm_medium+af_utm_campaign+af_utm_content_plus+af_ga_uid_sm+af_ios_url_xx;
 // WEB
-var redirect_unknown = web_link+other_param_web+utm_all;
+var redirect_unknown = web_link_web+other_param_web+utm_all;
 
 function check_platform(ua) {if(/android/gi.test(ua)){return 'android';}if(/iphone|ipod/gi.test(ua)){return 'iPhone';}return  'unknown';}
 function redirect_user (address) {setTimeout(function(){window.location.href=address}, 2100);return true;}
