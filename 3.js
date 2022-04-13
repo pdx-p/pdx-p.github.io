@@ -1,4 +1,4 @@
-console.log("3.js")
+console.log("4.js")
 var web_link_ios = web_link;
 var web_link_android = web_link;
 // v 1.10
@@ -96,7 +96,7 @@ var utm_all=separator_web+web_utm_source+web_utm_medium+web_utm_campaign+web_utm
 else {var utm_all = '';}
 
 if (web_link.search("person/dist_services/inner_apps")>=0) { var web_link_ios = 'https://online.sberbank.ru/CSAFront/index.do#/'}
-if (web_link.search("person/dist_services/inner_apps")>=0) { var web_link_android = 'https://www.sberbank.ru/ru/person/dist_services/inner_apps?cache=no'}
+if (web_link.search("person/dist_services/inner_apps")>=0) { var web_link_android = 'https://cdn.sberbank.ru/appdistr/SberbankOnline.apk'}
 
 var af_ios_url_xx = '&af_ios_url=' + encodeURIComponent(web_link_ios+other_param_web_url+utm_all)+'&af_param_forwarding=false';
 var af_android_url_xx = '&af_android_url=' + encodeURIComponent(web_link_android+other_param_web_url+utm_all)+'&af_param_forwarding=false';
