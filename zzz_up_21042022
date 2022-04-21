@@ -16,6 +16,7 @@
 <body>
 <div class="smart_img"><p><br><img src="https://www.sberbank.ru/common/img/uploaded/files/sms/sber_logo_main.png"><br><br><br><br>Запрос обрабатывается. <br><br>Подождите несколько секунд...</p>
 
+<script>
 (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -27,8 +28,8 @@ new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://8kwky1agm3.a.trbcdn.net/gtm/versions/up21042022/m5.js';f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-NFPPM5');
+</script>
 
-<script>
 
 <button name="test" value="test">
 GTM "test"
