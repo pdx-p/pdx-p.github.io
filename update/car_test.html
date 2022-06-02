@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="/sms/img/favicon2.ico" type="image/x-icon">
+<title>Сбербанк Онлайн</title>
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:title" content="СберБанк Онлайн">
+<meta property="og:type" content="article">
+<meta property="og:description" content="СберБанк Онлайн">
+<meta property="og:image"
+content="https://www.sberbank.ru/portalserver/static/templates/%5BBBHOST%5D/RuMasterpageTemplate/static/social-ru.png" />
+<meta name="twitter:image"
+content="https://www.sberbank.ru/portalserver/static/templates/%5BBBHOST%5D/RuMasterpageTemplate/static/social-ru.png" />
+<meta property="og:image:width" content="100" />
+<style type="text/css">
+.smart_img p {
+margin: 0;
+position: absolute;
+top: 50%;
+left: 50%;
+margin-right: -50%;
+transform: translate(-50%, -50%)
+}
+p {
+display: block;
+align-items: center;
+text-align: center;
+}
+p img {
+width: 50%;
+}
+@media screen and (max-width: 1000px) {
+p img {
+width: 70%;
+}
+}
+</style>
+</head>
+<body>
+<div class="smart_img">
+<p><br><img
+src="https://www.sberbank.ru/common/img/uploaded/files/sms/sber_logo_main.png"><br><br><br><br>Запрос
+обрабатывается. <br><br>Подождите несколько секунд...</p>
+<script>
+var af_media_source = 'carloanrequest';
+var android_dp = 'android-app://ru.sberbankmobile/android-app/ru.sberbankmobile/carloans/carloanrequest';
+var ios_dp = 'sberbankonline://carloans/carloanrequest';
+var web_link =
+'https://online.sberbank.ru/CSAFront/service.do?srvUrl=%2Fsbtsbol%2Fprivate%2Floans%2Fcar%23%2Fdashboard';
+var need_web = true;
+if (document.location.href.search('need_web=true') > 0) {
+var need_web = true;
+};
+const uriSpace = /%20|\+|\s/ig
+const quots = /'|"/g
+const notValidRegExp = new RegExp('[^a-zA-Z0-9_=-]/', 'g')
+function ValidateString(str) {
+return String(str).replace(notValidRegExp, '').slice(0, 200)
+}
+function MakeSearchObj(string) {
+const out = {}
+const passedString = String(decodeURIComponent(string))
+if (/[=]/.test(passedString)) {
+passedString.split('&').forEach((item) => {
+const parts = String(item).split('=')
+if (parts[1]) {
+out[parts[0]] = ValidateString(parts[1].replace(uriSpace, '__').replace(quots,
+'')) || ''
+}
+})
+}
+return out
+}
+function MakeSearchStr(obj) {
+return Object.keys(obj)
+.filter((item) => obj[item])
+.map((item) => `${item}=${obj[item]}`)
+.join('&')
+}
+function GetObjectOfSearchParams() {
+const documentSearch = document.location.href.split('?')
+return documentSearch.length > 1 ? MakeSearchObj(documentSearch.pop()) : {}
+}
+function CheckPlatform(ua) {
+if (/android/gi.test(ua)) {
+return 'android'
+}
+if (/iphone|ipod/gi.test(ua)) {
+return 'iPhone'
+}
+return 'unknown'
+}
+function RedirectUser(address) {
+setTimeout(() => {
+window.location.href = address
+}, 2100)
+return true
+}
+function InformUser(msg) {
+document.write(msg)
+return true
+}
+function GetCookie(name) {
+const nameMatch = new RegExp(`(^| )${name}=([^;]+)`)
+const match = document.cookie.match(nameMatch)
+if (match) {
+return match[2]
+}
+return ''
+}
+function ReplaceAll(string, search, replace) {
+return string.split(search).join(replace)
+}
+function GetUtmParam(param, locationSearchParams) {
+return ValidateString(locationSearchParams?.[param] || GetCookie(param))
+}
+const deepLinkAndroid = android_dp
+const deepLinkIOS = ios_dp
+const deepLinkWeb = web_link
+const appsFlyerMediaSource = af_media_source
+const appsFlyerPid = {
+pid: appsFlyerMediaSource
+}
+if (typeof af_c === "undefined") {
+var af_c = '&c=' + af_media_source;
+}
+const appsFlyerC = MakeSearchObj(af_c)
+const appsFlyerDeepLinkAndroid = encodeURIComponent(deepLinkAndroid)
+const appsFlyerDeepLinkIOS = encodeURIComponent(deepLinkIOS)
+const needWeb = document.location.href.search('need_web=true') > 0 || true
+const appsFlyerWebUrl = needWeb ? deepLinkWeb : ''
+const utmParams = [
+'utm_source',
+'utm_medium',
+'utm_campaign',
+'utm_content',
+'utm_term',
+'need_web'
+]
+const locationSearchParams = GetObjectOfSearchParams()
+const passedSearchParams = {}
+Object.keys(locationSearchParams)
+.filter((item) => !utmParams.includes(item))
+.forEach((item) => {
+passedSearchParams[item] = locationSearchParams[item]
+})
+const utmSourceSm = GetUtmParam('utm_source', locationSearchParams)
+const utmMediumSm = GetUtmParam('utm_medium', locationSearchParams)
+const utmCampainSm = GetUtmParam('utm_campaign', locationSearchParams)
+const utmContentSm = GetUtmParam('utm_content', locationSearchParams)
+const utmTermSm = GetUtmParam('utm_term', locationSearchParams)
+const utmContentSum = [utmContentSm.slice(0, 100), utmTermSm.slice(0, 100)].join('-_-')
+const ga_uid_fc = GetCookie('_ga') || '0.0.0.0';
+const ga_uid_arr = ga_uid_fc.split(/\./);
+const ga_uid_sm = ("_y_" + GetCookie('_ym_uid') + "_d_" + GetCookie('___dmpkit___') + "_g_" + ga_uid_arr[2] + '.' + ga_uid_arr[3]).slice(0, 90);
+
+  
+const external_source = {
+external_source: [
+[
+appsFlyerMediaSource,
+utmSourceSm,
+utmMediumSm,
+utmCampainSm,
+utmContentSum
+].join('-_-').slice(0, 221),
+ga_uid_sm
+].join('-_-')
+}
+const appsFlyerParams = {
+af_sub1: utmSourceSm,
+af_sub2: utmMediumSm,
+af_sub3: utmCampainSm,
+af_sub4: utmContentSum,
+af_sub5: ga_uid_sm,
+is_retargeting: 'true',
+...appsFlyerPid,
+...appsFlyerC
+}
+const webUtmParams = {
+utm_source: utmSourceSm,
+utm_medium: utmMediumSm,
+utm_campaign: utmCampainSm,
+utm_content: utmContentSum,
+utm_term: utmTermSm
+}
+const passedUTM = deepLinkWeb.toLowerCase().search('sberbank.ru') < 0 ? webUtmParams : {}
+const androidParams = {
+...appsFlyerParams,
+af_dp: appsFlyerDeepLinkAndroid + encodeURIComponent('?' + MakeSearchStr({
+...passedSearchParams,
+...external_source
+}))
+}
+const iosParams = {
+//...appsFlyerParams,
+//af_force_deeplink: 'true',
+af_dp: 
+appsFlyerDeepLinkIOS + encodeURIComponent('?' + MakeSearchStr({
+...passedSearchParams,
+...external_source
+}))
+}
+if (appsFlyerWebUrl !== '') {
+const urlEncoded = encodeURIComponent([appsFlyerWebUrl, MakeSearchStr({
+...passedSearchParams,
+...passedUTM
+})].join('?'))
+//androidParams.af_android_url = urlEncoded
+//androidParams.af_param_forwarding = 'false'
+//iosParams.af_ios_url = urlEncoded
+//iosParams.af_param_forwarding = 'false'
+}
+const redirectAndroidLink = decodeURIComponent(appsFlyerDeepLinkAndroid + encodeURIComponent('?' + MakeSearchStr({
+...passedSearchParams,
+...external_source
+})))
+const redirectIosLink = decodeURIComponent(appsFlyerDeepLinkIOS + encodeURIComponent('?' + MakeSearchStr({
+...passedSearchParams,
+...external_source
+})))
+const redirectWebLink = [
+deepLinkWeb,
+'?',
+ReplaceAll(
+MakeSearchStr({
+...passedSearchParams,
+...passedUTM
+}),
+'&',
+'%26'
+)
+].join('')
+
+const platform = CheckPlatform(navigator.userAgent)
+if (platform === 'android') {
+  setTimeout(function(){window.location.href = redirectAndroidLink},2100)
+  setTimeout(function(){window.location.href = redirectAndroidLink},2200)
+console.log(redirectAndroidLink)
+} else if (platform === 'iPhone') {
+  setTimeout(function(){window.location.href = redirectIosLink},2100)
+  setTimeout(function(){window.location.href = redirectIosLink},2150)
+} else {
+  setTimeout(function(){window.location.href = redirectWebLink},2100)
+}
+
+</script>
+<style>
+body {
+font-size: 20px;
+font-family: Arial;
+}
+</style>
+<script src="https://sberbank.ru/common/img/uploaded/files/sms/smartlink_code/2.js"></script>
+</body>
+</html>
+  
+  
