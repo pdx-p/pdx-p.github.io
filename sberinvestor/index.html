@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="/sms/img/favicon2.ico" type="image/x-icon">
+<title>Сбербанк Онлайн</title>
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:title" content="СберБанк Онлайн">
+<meta property="og:type" content="article">
+<meta property="og:description" content="СберБанк Онлайн">
+<meta property="og:image" content="https://www.sberbank.ru/portalserver/static/templates/%5BBBHOST%5D/RuMasterpageTemplate/static/social-ru.png" />
+<meta name="twitter:image" content="https://www.sberbank.ru/portalserver/static/templates/%5BBBHOST%5D/RuMasterpageTemplate/static/social-ru.png" />
+<meta property="og:image:width" content="100" />
+<style type="text/css">.smart_img p{margin: 0;position: absolute;top: 50%;left: 50%;margin-right: -50%;transform: translate(-50%, -50%)}p {display: block;align-items: center;text-align: center;}p img { width: 50%;}@media screen and (max-width: 1000px) {p img { width: 70%;}}</style>
+</head>
+<body>
+<div class="smart_img"><p><br><img src="https://www.sberbank.ru/common/img/uploaded/files/sms/sber_logo_main.png"><br><br><br><br>Запрос обрабатывается. <br><br>Подождите несколько секунд...</p>
+<script>
+var af_media_source = 'sberinvestor';
+var android_dp = 'sberinvestor://assets?type_screen=bpif&from=BANERSBOL06';
+var ios_dp = 'sberinvestor://assets?type_screen=bpif&from=BANERSBOL06';
+var web_link = 'https://www.sberbank.ru/ru/person/investments/sberinvestor';
+var need_web = false;
+if (document.location.href.search('need_web=true')>0) {var need_web = true};
+
+// v 2.0 17.06.2022
+var web_link_ios = web_link;
+var web_link_android = web_link;
+var web_link_web = web_link;
+var af_pid = 'pid=' + af_media_source;
+if (typeof af_c == "undefined") { var af_c = '&c=' + af_media_source;}
+var android_af_dp = encodeURIComponent(android_dp);
+var ios_af_dp = encodeURIComponent(ios_dp);
+var af_web_url = '';
+need_web == true ? af_web_url = web_link : need_web;
+var utm_source_sm='', utm_medium_sm='', utm_campaign_sm='', utm_content_sm='', utm_term_sm='', ga_uid_sm='', other_param = '', other_param_app = '', other_param_web = '', other_param_web_url='';
+var getCookie = function(name) {
+var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+    if (match) { return match[2] } else { return '' };
+};
+var utm_cookie_arr = [getCookie('utm_source'), getCookie('utm_medium'), getCookie('utm_campaign'), getCookie('utm_content'), getCookie('utm_term')]
+var utm_arr = [];
+if (document.location.href.search(/=/) > 0) {
+var UTM = decodeURIComponent(document.location.href.split('?').pop());
+var utm_arr = UTM.split('&');
+    var count_utm_arr = -1;
+
+for (i = 0; i < utm_arr.length; i++) { if (utm_arr[i].search('utm_') >= 0) { var count_utm_arr = ++i } }
+(count_utm_arr >= 0) ? utm_arr = utm_arr.slice(0, count_utm_arr) : count_utm_arr = 0;
+for (i = 0; i < utm_arr.length; i++) {
+if (utm_arr[i].toLowerCase().search('utm_source') >= 0) { var utm_source_sm = (utm_arr[i].split('=').pop()).replace(/[^a-zA-Z0-9_=-]/g, ''); utm_arr[i] = '' };
+if (utm_arr[i].toLowerCase().search('utm_medium') >= 0) { var utm_medium_sm = (utm_arr[i].split('=').pop()).replace(/[^a-zA-Z0-9_=-]/g, ''); utm_arr[i] = '' };
+if (utm_arr[i].toLowerCase().search('utm_campaign') >= 0) { var utm_campaign_sm = (utm_arr[i].split('=').pop()).replace(/[^a-zA-Z0-9_=-]/g, ''); utm_arr[i] = '' };
+if (utm_arr[i].toLowerCase().search('utm_content') >= 0) { var utm_content_sm = (utm_arr[i].split('=').pop()).replace(/[^a-zA-Z0-9_=-]/g, ''); utm_arr[i] = '' };
+if (utm_arr[i].toLowerCase().search('utm_term') >= 0) { var utm_term_sm = '-_-' + (utm_arr[i].split('=').pop()).replace(/[^a-zA-Z0-9_=-]/g, ''); utm_arr[i] = '' };
+if (utm_arr[i].toLowerCase().search('need_web') >= 0) { utm_arr[i] = '' };
+if (utm_arr[i].length > 200) { utm_arr[i] = utm_arr[i].slice(0, 200) }
+}
+}
+if (utm_source_sm == '') { utm_source_sm = utm_cookie_arr[0].replace(/[^a-zA-Z0-9_=-]/g, '').slice(0,200)};
+if (utm_medium_sm == '') { utm_medium_sm = utm_cookie_arr[1].replace(/[^a-zA-Z0-9_=-]/g, '').slice(0,200)};
+if (utm_campaign_sm == '') { utm_campaign_sm = utm_cookie_arr[2].replace(/[^a-zA-Z0-9_=-]/g, '').slice(0,200)};
+if (utm_content_sm == '') { utm_content_sm = utm_cookie_arr[3].replace(/[^a-zA-Z0-9_=-]/g, '').slice(0,200)};
+if (utm_term_sm == '') { utm_term_sm = '-_-'+utm_cookie_arr[4].replace(/[^a-zA-Z0-9_=-]/g, '').slice(0,200)};
+var other_param = encodeURIComponent(utm_arr.filter(v => v ).join('&'));
+function replaceAll(string, search, replace) {
+return string.split(search).join(replace);
+}
+if (other_param != '') {
+var other_param_app = other_param + '%26';
+    var other_param_web = '?' + replaceAll(decodeURIComponent(utm_arr.filter(v => v).join('&')).replace(/[\+\s]/ig, '__'), '&', '%26') 
+    var other_param_web_url = '&' + replaceAll(decodeURIComponent(utm_arr.filter(v => v).join('&')).replace(/[\+\s]/ig, '__'), '&', '%26')
+};
+var ga_uid_fc = getCookie('_ga') || '0.0.0.0';
+var ga_uid_arr = ga_uid_fc.split(/\./);
+var ga_uid_sm = ("_y_" + getCookie('_ym_uid') + "_d_" + getCookie('___dmpkit___') + "_g_" + ga_uid_arr[2] + '.' + ga_uid_arr[3]).slice(0, 90);
+var utm_content_plus = utm_content_sm.slice(0, 100) + utm_term_sm.slice(0, 100);
+var external_source = 'external_source%3D'+af_media_source+'-_-'+utm_source_sm+'-_-'+utm_medium_sm+'-_-'+utm_campaign_sm+'-_-'+utm_content_plus;
+external_source = external_source.length > 165 ? external_source.slice(0,165)+'-_-'+ga_uid_sm : external_source+'-_-'+ga_uid_sm;
+if (android_af_dp.search(/\?|%3F/) > 0){
+var is_q_and = '%26';
+} else
+{ var is_q_and = '%3F'};
+if (ios_af_dp.search(/\?|%3F/) > 0){
+var is_q_ios = '%26';
+} else
+{ var is_q_ios = '%3F' };
+var af_utm_source = utm_source_sm ? '&af_sub1='+utm_source_sm : '';
+var af_utm_medium = utm_medium_sm ? '&af_sub2='+utm_medium_sm : '';
+var af_utm_campaign = utm_campaign_sm ? '&af_sub3='+utm_campaign_sm : '';
+var af_utm_content_plus = utm_content_plus ? '&af_sub4='+utm_content_plus : ''; 
+var af_ga_uid_sm = ga_uid_sm ? '&af_sub5=' + ga_uid_sm : '';
+var web_utm_source = utm_source_sm ? 'utm_source='+utm_source_sm : '';
+var web_utm_medium = utm_medium_sm ? '&utm_medium='+utm_medium_sm : '';
+var web_utm_campaign = utm_campaign_sm ? '&utm_campaign='+utm_campaign_sm : '';
+var web_utm_content = utm_content_sm ? '&utm_content='+utm_content_sm : '';
+var web_utm_term = utm_content_sm ? '&utm_term='+utm_term_sm : '';
+var web_link_other_param_web = web_link+other_param_web
+if (web_link_other_param_web.toLowerCase().search(/\?/)>0)
+{ var separator_web = '&';}
+if (web_link_other_param_web.toLowerCase().search(/\?/)<0)
+{ var separator_web = '?';}
+if (web_link.toLowerCase().search('sberbank.ru')<0){
+var utm_all=separator_web+web_utm_source+web_utm_medium+web_utm_campaign+web_utm_content+web_utm_term;}
+else {var utm_all = '';}
+if (web_link.search("person/dist_services/inner_apps")>=0) { var web_link_ios = 'https://online.sberbank.ru/CSAFront/index.do#/'}
+if (web_link.search("person/dist_services/inner_apps")>=0) { var web_link_android = 'https://www.sberbank.ru/ru/person/dist_services/inner_apps?cache=no'}
+if (web_link.search("person/dist_services/inner_apps")>=0) { var web_link_web = 'https://online.sberbank.ru/CSAFront/index.do#/'}
+
+var redirect_android = decodeURIComponent(android_af_dp+is_q_and+other_param_app);
+var redirect_iphone = decodeURIComponent(ios_af_dp+is_q_ios+other_param_app);
+var redirect_unknown = web_link_web+other_param_web+utm_all;
+
+var nAgt = navigator.userAgent;
+var nameOffset, verOffset, ix;
+function check_platform(ua) { if (/android/gi.test(ua)) { return 'android'; } if (/iphone|ipod/gi.test(ua)) { return 'iPhone'; } return 'unknown'; }
+
+var platform = check_platform(navigator.userAgent);
+if (platform == "android") {
+    if (redirect_android.search('android-app://')) {
+        if ((verOffset = nAgt.indexOf("Firefox")) != -1) {
+            setTimeout(function () {
+                window.location.href = redirect_android.replace(new RegExp("^android-app:\/\/", "gm"), "intent://")
+            }, 2100);
+            setTimeout(function () {
+                window.location.href = redirect_unknown;
+            }, 2300);
+        } else {
+            setTimeout(function () {
+                window.location.href = redirect_android.replace(new RegExp("^android-app:\/\/", "gm"), "intent://") + "#Intent;scheme=android-app;package=ru.sberbankmobile;S.browser_fallback_url=" + redirect_unknown + ";end"
+            }, 2100);
+            setTimeout(function () {
+                window.location.href = redirect_unknown;
+            }, 2300);
+        }
+    } else {
+        setTimeout(function () {
+            window.location.href = redirect_android
+        }, 2100);
+        setTimeout(function () {
+            window.location.href = redirect_unknown;
+        }, 2300);
+    }
+} else if (platform == "iPhone") {
+    setTimeout(function () {
+        window.location.href = redirect_iphone
+    }, 2100);
+    setTimeout(function () {
+        window.location.href = redirect_unknown;
+    }, 2300);
+} else {
+    setTimeout(function () {
+        window.location.href = redirect_unknown;
+    }, 2100);
+}
+
+</script>
+<style>
+body {font-size: 20px; font-family: Arial;}
+</style>
+<script src="https://sberbank.ru/common/img/uploaded/files/sms/smartlink_code/2.js"></script>
+</body>
+</html>
